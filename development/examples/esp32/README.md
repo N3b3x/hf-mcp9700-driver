@@ -1,6 +1,10 @@
 # ESP32 MCP9700 examples (ESP32-C6)
 
-ESP-IDF examples for the MCP9700 linear thermistor using the on-chip **ADC** (not an external SPI/I2C ADC).
+ESP-IDF examples for the **Microchip MCP9700 / MCP9700A** using the ESP32-C6 **on-chip SAR ADC** (no external SPI/I2C ADC required).
+
+**Documentation:** [Docs home](../../docs/index.md) · [Hardware setup](../../docs/hardware_setup.md) · [Examples guide](../../docs/examples.md) · [ESP-IDF ADC (ESP32-C6)](https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc.html)
+
+![Wiring overview](../../docs/assets/mcp9700-wiring.svg)
 
 ## Submodule (required for `./scripts/build_app.sh`)
 
@@ -21,7 +25,7 @@ This checks out `examples/esp32/scripts` ([hf-espidf-project-tools](https://gith
 | MCP9700 Vss | GND |
 | MCP9700 Vout | **GPIO0** — **ADC1 channel 0** |
 
-Edit `main/mcp9700_esp32c6_example.cpp` if you use another ADC-capable GPIO (update `ADC_CHANNEL_*` and attenuation to keep Vout in range).
+Edit `main/mcp9700_esp32c6_example.cpp` if you use another ADC-capable GPIO (update `ADC_CHANNEL_*` and attenuation to keep Vout in range). See also the [ADC oneshot API](https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc_oneshot.html).
 
 ## Build with scripts
 

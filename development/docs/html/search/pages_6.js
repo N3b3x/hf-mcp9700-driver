@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mcp9700_20documentation_0',['HF-MCP9700 documentation',['../md_docs_2index.html',1,'']]],
-  ['mcp9700_20driver_1',['HF-MCP9700 Driver',['../index.html',1,'']]]
+  ['installation_0',['Installation',['../md_docs_2installation.html',1,'']]],
+  ['integration_1',['CMake integration',['../md_docs_2cmake__integration.html',1,'']]]
 ];

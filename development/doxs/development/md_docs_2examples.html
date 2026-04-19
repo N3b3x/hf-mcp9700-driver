@@ -97,20 +97,36 @@ $(function(){initNavTree('md_docs_2examples.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Examples</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md18"></a> </p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md26"></a> </p>
+<h1><a class="anchor" id="autotoc_md27"></a>
 ESP32-C6 (<code>examples/esp32</code>)</h1>
-<p>Application: <code>mcp9700_esp32c6_example</code></p>
-<ul>
-<li>Uses <code>esp_adc</code> oneshot driver and optional calibration.</li>
-<li>Reads MCP9700 Vout on <b>GPIO0 / ADC1 CH0</b> by default.</li>
-<li>Prints temperature every 500 ms.</li>
-</ul>
-<p>Initialize the <code>scripts</code> submodule before using <code>build_app.sh</code>:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Item   </th><th class="markdownTableHeadNone">Detail    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Application   </td><td class="markdownTableBodyNone"><code>mcp9700_esp32c6_example</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ADC   </td><td class="markdownTableBodyNone">ESP-IDF <b>oneshot</b> ADC + optional calibration    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone"><b>GPIO0</b> / <b>ADC1 CH0</b> by default    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Log   </td><td class="markdownTableBodyNone">Temperature about every <b>500 ms</b>   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md28"></a>
+Submodule</h2>
+<p>Initialize shared tooling before <code>./scripts/build_app.sh</code>:</p>
 <div class="fragment"><div class="line">git submodule update --init --recursive</div>
 <div class="line">cd examples/esp32</div>
 <div class="line">./scripts/build_app.sh mcp9700_esp32c6_example Debug</div>
-</div><!-- fragment --><p>See examples/esp32/README.md. </p>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md29"></a>
+Example source</h2>
+<p>The sketch lives at <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/examples/esp32/main/mcp9700_esp32c6_example.cpp"><code>examples/esp32/main/mcp9700_esp32c6_example.cpp</code></a> — it wraps <code><a class="el" href="classhf_1_1mcp9700_1_1Mcp9700Thermistor.html" title="Template driver for MCP9700 family sensors on a multiplexed ADC.">hf::mcp9700::Mcp9700Thermistor</a></code> with an ESP-IDF ADC adapter class.</p>
+<h2><a class="anchor" id="autotoc_md30"></a>
+Full README</h2>
+<p>See <b><a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/examples/esp32/README.md">examples/esp32/README.md</a></b> for <code>idf.py</code> commands, wiring table, and troubleshooting.</p>
+<h1><a class="anchor" id="autotoc_md31"></a>
+Other platforms</h1>
+<p>There is no second bundled example today; port by implementing the adapter in <a class="el" href="md_docs_2quickstart.html">Quick start</a> against your HAL. Contributions welcome via <a href="https://github.com/N3b3x/hf-mcp9700-driver/issues">Issues</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quick_20start_0',['Quick start',['../md_docs_2quickstart.html',1,'']]]
+  ['on_20chip_20adc_0',['Hardware setup — ESP32-C6 (on-chip ADC)',['../md_docs_2hardware__setup.html',1,'']]]
 ];

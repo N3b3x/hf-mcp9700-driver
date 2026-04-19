@@ -97,41 +97,56 @@ $(function(){initNavTree('md_docs_2index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">HF-MCP9700 documentation</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md24"></a> This driver implements the standard MCP9700/MCP9700A transfer function from the Microchip datasheet:</p>
-<ul>
-<li>Typical output at 0 °C: <b>0.5 V</b></li>
-<li>Typical sensitivity: <b>10 mV/°C</b></li>
-</ul>
-<p>Your platform must measure <b>Vout in volts</b> at the MCP9700 output (after any external scaling) and pass that value through <code>ReadChannelV</code>.</p>
-<h1><a class="anchor" id="autotoc_md25"></a>
-Guides</h1>
+<div class="textblock"><p><a class="anchor" id="autotoc_md39"></a> Welcome. This site mirrors the <a href="https://github.com/N3b3x/hf-mcp9700-driver/tree/main/docs"><code>docs/</code></a> folder in the repository and adds navigation, search, and diagrams for the <b>MCP9700 / MCP9700A</b> linear active thermistor driver.</p>
+<blockquote class="doxtable">
+<p>&zwj;<b>Browse on GitHub:</b> <a href="https://github.com/N3b3x/hf-mcp9700-driver">repository home</a> · <a href="https://github.com/N3b3x/hf-mcp9700-driver/issues">Issues</a> </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md40"></a>
+Documentation structure</h1>
+<h2><a class="anchor" id="autotoc_md41"></a>
+Getting started</h2>
+<ol type="1">
+<li><b><a class="el" href="md_docs_2installation.html">Installation</a></b> — Compiler/CMake requirements and include layout <br  />
+</li>
+<li><b><a class="el" href="md_docs_2quickstart.html">Quick start</a></b> — Smallest adapter you need to read °C <br  />
+</li>
+<li><b><a class="el" href="md_docs_2transfer__function.html">Transfer function</a></b> — Equations, typical curve, calibration knobs <br  />
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md42"></a>
+Hardware &amp; integration</h2>
+<ol type="1">
+<li><b><a class="el" href="md_docs_2hardware__setup.html">Hardware setup — ESP32-C6</a></b> — Wiring diagram, ADC channel, attenuation <br  />
+</li>
+<li><b><a class="el" href="md_docs_2cmake__integration.html">CMake integration</a></b> — <code>hf_mcp9700_build_settings.cmake</code>, <code><a class="el" href="namespacehf_1_1mcp9700.html">hf::mcp9700</a></code> target <br  />
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md43"></a>
+Reference &amp; examples</h2>
+<ol type="1">
+<li><b><a class="el" href="md_docs_2api__reference.html">API reference</a></b> — <code>Mcp9700Thermistor</code>, adapter contract, version helper <br  />
+</li>
+<li><b><a class="el" href="md_docs_2examples.html">Examples</a></b> — ESP-IDF example and build/flash flow <br  />
+</li>
+<li><b><a class="el" href="md_docs_2troubleshooting.html">Troubleshooting</a></b> — Version header, ADC range, <code>ReadChannelV</code> semantics <br  />
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md44"></a>
+Manufacturer</h2>
+<ol type="1">
+<li><b><a class="el" href="/home/runner/work/hf-mcp9700-driver/hf-mcp9700-driver/docs/datasheet/README.md#md_docs_2datasheet_2README">Datasheet &amp; links</a></b> — Official Microchip documentation and product pages <br  />
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md45"></a>
+Visual overview</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Guide   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<th class="markdownTableHeadNone">Diagram   </th><th class="markdownTableHeadNone">File    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2installation.html">Installation</a>   </td><td class="markdownTableBodyNone">Include paths and CMake    </td></tr>
+<td class="markdownTableBodyNone">ESP32-C6 ↔ MCP9700 wiring (default example)   </td><td class="markdownTableBodyNone"><a href="assets/mcp9700-wiring.svg"><code>assets/mcp9700-wiring.svg</code></a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2quickstart.html">Quick start</a>   </td><td class="markdownTableBodyNone">Minimal adapter sketch    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2cmake__integration.html">CMake integration</a>   </td><td class="markdownTableBodyNone"><code>hf_mcp9700_build_settings.cmake</code>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2hardware__setup.html">Hardware setup — ESP32-C6</a>   </td><td class="markdownTableBodyNone">ADC pin and attenuation    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2examples.html">Examples</a>   </td><td class="markdownTableBodyNone">ESP-IDF example overview    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2api__reference.html">API reference</a>   </td><td class="markdownTableBodyNone">Class and free functions    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="md_docs_2troubleshooting.html">Troubleshooting</a>   </td><td class="markdownTableBodyNone">Common issues    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="/home/runner/work/hf-mcp9700-driver/hf-mcp9700-driver/docs/datasheet/README.md#md_docs_2datasheet_2README">Datasheet reference</a>   </td><td class="markdownTableBodyNone">Official Microchip PDF (not redistributed here)   </td></tr>
+<td class="markdownTableBodyNone">Typical V<sub>out</sub> vs temperature   </td><td class="markdownTableBodyNone"><a href="assets/mcp9700-transfer.svg"><code>assets/mcp9700-transfer.svg</code></a>   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md26"></a>
-Source layout</h1>
-<ul>
-<li><code><a class="el" href="mcp9700__thermistor_8hpp.html" title="Hardware-agnostic MCP9700 / MCP9700A linear active thermistor driver.">inc/mcp9700_thermistor.hpp</a></code> — template API</li>
-<li><code><a class="el" href="mcp9700__thermistor_8ipp.html">src/mcp9700_thermistor.ipp</a></code> — template implementation</li>
-<li><code>inc/mcp9700_version.h</code> — generated by CMake from <code>mcp9700_version.h.in</code> </li>
-</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

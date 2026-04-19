@@ -97,8 +97,8 @@ $(function(){initNavTree('md_docs_2api__reference.html',''); initResizable(); })
   <div class="headertitle"><div class="title">API reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md9"></a> </p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md11"></a> Full header: <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/inc/mcp9700_thermistor.hpp"><code>inc/mcp9700_thermistor.hpp</code></a> · implementation: <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/src/mcp9700_thermistor.ipp"><code>src/mcp9700_thermistor.ipp</code></a></p>
+<h1><a class="anchor" id="autotoc_md12"></a>
 <code>hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;</code></h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -116,13 +116,13 @@ $(function(){initNavTree('md_docs_2api__reference.html',''); initResizable(); })
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>float VoltsPerCelsius() const</code>   </td><td class="markdownTableBodyNone">Current sensitivity parameter.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Adapter contract (<code>AdcType</code>)</h1>
 <ul>
 <li><code>bool EnsureInitialized() noexcept</code></li>
 <li><code>int ReadChannelV(uint8_t channel, float* voltage_v) noexcept</code> — <b>0</b> = success</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Free functions</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -130,14 +130,17 @@ Free functions</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="mcp9700__thermistor_8hpp.html#af77a649eae4725fdf4571c029d0ef382" title="Driver version string (from generated mcp9700_version.h).">GetMcp9700DriverVersion()</a></code>   </td><td class="markdownTableBodyNone">Returns version string from generated <code>mcp9700_version.h</code>.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Namespace constants</h1>
 <ul>
-<li><code><a class="el" href="namespacehf_1_1mcp9700.html#a27400fbe7b26a2c086080f43e3b70c81" title="Default output voltage at 0 °C (500 mV typical, MCP9700/MCP9700A).">hf::mcp9700::kDefaultVoltsAtZeroC</a></code> — 0.5F <br  />
+<li><code><a class="el" href="namespacehf_1_1mcp9700.html#a27400fbe7b26a2c086080f43e3b70c81" title="Default output voltage at 0 °C (500 mV typical, MCP9700/MCP9700A).">hf::mcp9700::kDefaultVoltsAtZeroC</a></code> — <code>0.5F</code> <br  />
 </li>
-<li><code><a class="el" href="namespacehf_1_1mcp9700.html#ab863f3baa94f9573f162c7ffd5067e37" title="Default sensitivity (10 mV/°C typical).">hf::mcp9700::kDefaultVoltsPerCelsius</a></code> — 0.01F <br  />
- </li>
+<li><code><a class="el" href="namespacehf_1_1mcp9700.html#ab863f3baa94f9573f162c7ffd5067e37" title="Default sensitivity (10 mV/°C typical).">hf::mcp9700::kDefaultVoltsPerCelsius</a></code> — <code>0.01F</code> <br  />
+</li>
 </ul>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Doxygen</h1>
+<p>When building HTML API docs locally, use the repository <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/_config/Doxyfile"><code>_config/Doxyfile</code></a> — same pattern as other HardFOC drivers. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

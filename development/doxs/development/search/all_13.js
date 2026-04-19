@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wrong_0',['Temperature clearly wrong',['../md_docs_2troubleshooting.html#autotoc_md34',1,'']]]
+  ['quick_20start_0',['Quick start',['../md_docs_2quickstart.html',1,'Quick start'],['../index.html#autotoc_md5',1,'Quick start']]],
+  ['quickstart_2emd_1',['quickstart.md',['../quickstart_8md.html',1,'']]]
 ];

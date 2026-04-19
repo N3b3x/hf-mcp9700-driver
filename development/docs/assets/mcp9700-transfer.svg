@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="t2 d2">
+  <title id="t2">MCP9700 typical output voltage vs temperature</title>
+  <desc id="d2">Linear region using typical 500 mV at 0C and 10 mV per C from Microchip datasheet</desc>
+  <defs>
+    <style><![CDATA[
+      .bg { fill: #0f1419; }
+      .axis { stroke: #5c7c99; stroke-width: 1.5; }
+      .grid { stroke: #2a3a4d; stroke-width: 1; stroke-dasharray: 4 4; }
+      .curve { stroke: #4ecdc4; stroke-width: 3; fill: none; }
+      .txt { fill: #e6edf3; font-family: system-ui, sans-serif; font-size: 13px; }
+      .small { fill: #8ba3bf; font-size: 11px; }
+    ]]></style>
+  </defs>
+  <rect class="bg" width="560" height="360" rx="8"/>
+  <text class="txt" x="280" y="28" text-anchor="middle" font-size="15" font-weight="600">Typical output vs temperature (MCP9700/MCP9700A)</text>
+  <text class="small" x="280" y="48" text-anchor="middle">T_C H (Vout  V€) / (mV/°C)  defaults: V€ = 0.5 V, 10 mV/°C</text>
+  <!-- Plot area -->
+  <rect x="70" y="70" width="420" height="240" fill="none" stroke="#3d5a80" stroke-width="1"/>
+  <!-- Grid -->
+  <g>
+    <line class="grid" x1="70" y1="150" x2="490" y2="150"/>
+    <line class="grid" x1="70" y1="230" x2="490" y2="230"/>
+    <line class="grid" x1="198" y1="70" x2="198" y2="310"/>
+    <line class="grid" x1="326" y1="70" x2="326" y2="310"/>
+    <line class="grid" x1="454" y1="70" x2="454" y2="310"/>
+  </g>
+  <!-- Axes labels -->
+  <text class="txt" x="280" y="340" text-anchor="middle">Temperature (°C)</text>
+  <text class="txt" transform="rotate(-90 24 190)" x="24" y="190" text-anchor="middle">Vout (V)</text>
+  <text class="small" x="70" y="330">40</text>
+  <text class="small" x="250" y="330" text-anchor="middle">25</text>
+  <text class="small" x="490" y="330" text-anchor="end">125</text>
+  <text class="small" x="58" y="314">0.1</text>
+  <text class="small" x="58" y="174">0.75</text>
+  <text class="small" x="58" y="78">1.75</text>
+  <!-- Linear curve: map T -40..125 to x, V roughly 0.1 to 1.75 -->
+  <path class="curve" d="M 70 300 Q 198 200 326 140 T 490 76"/>
+  <circle cx="326" cy="140" r="5" fill="#4ecdc4"/>
+  <text class="small" x="336" y="130">~25 °C ’ ~0.75 V (typ.)</text>
+</svg>

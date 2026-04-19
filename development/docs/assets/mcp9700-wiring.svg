@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
+  <title id="title">MCP9700 to ESP32-C6 minimal wiring</title>
+  <desc id="desc">3.3V and ground from ESP32-C6 to MCP9700 Vdd and Vss; MCP9700 Vout to GPIO0 ADC1 channel 0</desc>
+  <defs>
+    <style><![CDATA[
+      .bg { fill: #0f1419; }
+      .box { fill: #1a2332; stroke: #3d5a80; stroke-width: 2; }
+      .chip { fill: #243447; stroke: #5c7c99; stroke-width: 2; }
+      .wire { stroke: #e0a040; stroke-width: 3; fill: none; }
+      .wire-gnd { stroke: #6b7a8f; stroke-width: 3; fill: none; }
+      .txt { fill: #e6edf3; font-family: system-ui, Segoe UI, sans-serif; font-size: 14px; }
+      .lbl { fill: #8ba3bf; font-family: system-ui, sans-serif; font-size: 12px; }
+      .pin { fill: #c9d6e8; font-family: ui-monospace, monospace; font-size: 13px; }
+    ]]></style>
+  </defs>
+  <rect class="bg" width="640" height="320" rx="8"/>
+  <text class="txt" x="320" y="28" text-anchor="middle" font-size="16" font-weight="600">Typical MCP9700 ’ ESP32-C6 (default example)</text>
+  <!-- MCU -->
+  <rect class="box" x="40" y="60" width="200" height="200" rx="6"/>
+  <text class="txt" x="140" y="92" text-anchor="middle" font-weight="600">ESP32-C6</text>
+  <text class="lbl" x="140" y="112" text-anchor="middle">3.3 V rail · GND · GPIO0</text>
+  <text class="pin" x="60" y="150">3V3</text>
+  <text class="pin" x="60" y="190">GND</text>
+  <text class="pin" x="60" y="230">GPIO0</text>
+  <text class="lbl" x="130" y="232">ADC1_CH0 (attenuation 12 dB)</text>
+  <!-- Sensor -->
+  <rect class="chip" x="400" y="100" width="180" height="120" rx="8"/>
+  <text class="txt" x="490" y="132" text-anchor="middle" font-weight="600">MCP9700 / MCP9700A</text>
+  <text class="pin" x="420" y="168">Vdd</text>
+  <text class="pin" x="420" y="198">Vss</text>
+  <text class="pin" x="420" y="228">Vout</text>
+  <!-- Wires -->
+  <path class="wire" d="M 240 150 L 320 150 L 320 168 L 400 168"/>
+  <path class="wire-gnd" d="M 240 190 L 360 190 L 360 198 L 400 198"/>
+  <path class="wire" d="M 240 230 L 340 230 L 340 228 L 400 228"/>
+  <text class="lbl" x="320" y="142" text-anchor="middle">3.3 V</text>
+  <text class="lbl" x="320" y="182" text-anchor="middle">GND</text>
+  <text class="lbl" x="330" y="258" text-anchor="middle">Analog output (H0.11.75 V over 40&+125 °C @ 3.3 V)</text>
+</svg>

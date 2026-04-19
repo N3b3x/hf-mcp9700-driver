@@ -97,24 +97,41 @@ $(function(){initNavTree('md_docs_2installation.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Installation</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md27"></a> </p>
-<h1><a class="anchor" id="autotoc_md28"></a>
-Requirements</h1>
+<div class="textblock"><p><a class="anchor" id="autotoc_md46"></a> This guide covers toolchain expectations, how to obtain the source, and how the <b>generated</b> <code>mcp9700_version.h</code> fits into your include path.</p>
+<h1><a class="anchor" id="autotoc_md47"></a>
+Prerequisites</h1>
 <ul>
-<li>C++17 or newer</li>
-<li>CMake 3.16+ if you use the provided root <code>CMakeLists.txt</code></li>
+<li><b>C++17</b> compiler (GCC 9+, Clang 9+, MSVC with <code>/std:c++17</code> or later) — see <a href="https://en.cppreference.com/w/cpp/17">cppreference</a></li>
+<li><b>CMake 3.16+</b> if you use the provided root <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/CMakeLists.txt"><code>CMakeLists.txt</code></a> or <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/cmake/hf_mcp9700_build_settings.cmake"><code>cmake/hf_mcp9700_build_settings.cmake</code></a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
+Obtain the source</h1>
+<div class="fragment"><div class="line">git clone --recursive https://github.com/N3b3x/hf-mcp9700-driver.git</div>
+<div class="line">cd hf-mcp9700-driver</div>
+</div><!-- fragment --><p>For ESP32 examples, the recursive clone ensures <a href="https://github.com/N3b3x/hf-mcp9700-driver/tree/main/examples/esp32"><code>examples/esp32/scripts</code></a> is populated.</p>
+<h1><a class="anchor" id="autotoc_md49"></a>
 Header-only layout</h1>
-<p>Install or vendor the repository, then add the include paths:</p>
+<p>Add two include roots:</p>
 <ol type="1">
-<li><code>inc/</code> — public headers</li>
-<li>Build directory containing generated <code>mcp9700_version.h</code> (from <code>mcp9700_version.h.in</code>)</li>
+<li>**<code>inc/</code>** — <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/inc/mcp9700_thermistor.hpp"><code>mcp9700_thermistor.hpp</code></a> and friends <br  />
+</li>
+<li><b>CMake binary dir</b> where <code>mcp9700_version.h</code> is generated (see below)</li>
 </ol>
-<p>The file <code>cmake/hf_mcp9700_build_settings.cmake</code> runs <code>configure_file</code> to emit <code>mcp9700_version.h</code> into <code>${CMAKE_CURRENT_BINARY_DIR}/hf_mcp9700_generated/</code> whenever it is included from a parent CMake project.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
-Consume from CMake</h1>
-<p>See <a class="el" href="md_docs_2cmake__integration.html">CMake integration</a>. </p>
+<p>Including <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/cmake/hf_mcp9700_build_settings.cmake"><code>cmake/hf_mcp9700_build_settings.cmake</code></a> runs <code>configure_file</code> on <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/inc/mcp9700_version.h.in"><code>inc/mcp9700_version.h.in</code></a> and emits:</p>
+<p><code>${CMAKE_CURRENT_BINARY_DIR}/hf_mcp9700_generated/mcp9700_version.h</code></p>
+<h1><a class="anchor" id="autotoc_md50"></a>
+CMake (recommended)</h1>
+<p>See the full walkthrough in <b><a class="el" href="md_docs_2cmake__integration.html">CMake integration</a></b>. Minimal pattern:</p>
+<div class="fragment"><div class="line">include(&quot;${CMAKE_SOURCE_DIR}/third_party/hf-mcp9700-driver/cmake/hf_mcp9700_build_settings.cmake&quot;)</div>
+<div class="line">target_include_directories(my_target PRIVATE ${HF_MCP9700_PUBLIC_INCLUDE_DIRS})</div>
+<div class="line">target_link_libraries(my_target PRIVATE hf::mcp9700)  # after add_subdirectory or FetchContent</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md51"></a>
+Verify</h1>
+<p>After configuration, build a target that includes:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mcp9700__thermistor_8hpp.html">mcp9700_thermistor.hpp</a>&quot;</span></div>
+<div class="ttc" id="amcp9700__thermistor_8hpp_html"><div class="ttname"><a href="mcp9700__thermistor_8hpp.html">mcp9700_thermistor.hpp</a></div><div class="ttdoc">Hardware-agnostic MCP9700 / MCP9700A linear active thermistor driver.</div></div>
+</div><!-- fragment --><p>If the compiler reports **<code>mcp9700_version.h</code> not found**, ensure the <b>generated</b> include directory is on your path — see <a class="el" href="md_docs_2troubleshooting.html">Troubleshooting</a>.</p>
+<p><b>Next:</b> <a class="el" href="md_docs_2quickstart.html">Quick start →</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

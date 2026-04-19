@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_0',['API reference',['../md_docs_2api__reference.html',1,'']]]
+  ['quick_20start_0',['Quick start',['../md_docs_2quickstart.html',1,'']]]
 ];

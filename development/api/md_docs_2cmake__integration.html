@@ -97,22 +97,34 @@ $(function(){initNavTree('md_docs_2cmake__integration.html',''); initResizable()
   <div class="headertitle"><div class="title">CMake integration</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md14"></a> </p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md17"></a> </p>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Embedded in a larger project (HardFOC pattern)</h1>
 <div class="fragment"><div class="line">include(&quot;${CMAKE_SOURCE_DIR}/path/to/hf-mcp9700-driver/cmake/hf_mcp9700_build_settings.cmake&quot;)</div>
 <div class="line">target_include_directories(my_target PRIVATE ${HF_MCP9700_PUBLIC_INCLUDE_DIRS})</div>
 </div><!-- fragment --><p><code>HF_MCP9700_PUBLIC_INCLUDE_DIRS</code> contains:</p>
 <ul>
-<li>The <code>inc/</code> directory</li>
-<li>The generated headers directory (<code>mcp9700_version.h</code>)</li>
+<li>The <a href="https://github.com/N3b3x/hf-mcp9700-driver/tree/main/inc"><code>inc/</code></a> directory <br  />
+</li>
+<li>The generated headers directory with <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/inc/mcp9700_version.h.in"><code>mcp9700_version.h</code></a> <br  />
+</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<p>After <code>add_subdirectory(hf-mcp9700-driver)</code> (or equivalent), link:</p>
+<div class="fragment"><div class="line">target_link_libraries(my_target PRIVATE hf::mcp9700)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md19"></a>
 Standalone interface library</h1>
 <p>From the driver root:</p>
 <div class="fragment"><div class="line">cmake -S . -B build</div>
 <div class="line">cmake --build build</div>
-</div><!-- fragment --><p>This exposes target <code>hf_mcp9700</code> (and alias <code><a class="el" href="namespacehf_1_1mcp9700.html">hf::mcp9700</a></code>) as an <code>INTERFACE</code> library. </p>
+</div><!-- fragment --><p>This exposes target **<code>hf_mcp9700</code>** and alias **<code><a class="el" href="namespacehf_1_1mcp9700.html">hf::mcp9700</a></code>** as an **<code>INTERFACE</code>** library (header-only).</p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Related</h1>
+<ul>
+<li><a class="el" href="md_docs_2installation.html">Installation</a> — include path checklist <br  />
+</li>
+<li><a class="el" href="md_docs_2api__reference.html">API reference</a> — when you only need includes, not a link library <br  />
+ </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

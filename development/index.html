@@ -166,7 +166,11 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/" class="nav-list-link">HardFOC MCP9700 Driver</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/" class="nav-list-link">Documentation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/api_reference.html" class="nav-list-link">API reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/cmake_integration.html" class="nav-list-link">CMake integration</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/datasheet/" class="nav-list-link">Datasheet reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/examples/esp32/" class="nav-list-link">ESP32 MCP9700 examples (ESP32-C6)</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/examples.html" class="nav-list-link">Examples</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/hardware_setup.html" class="nav-list-link">Hardware setup — ESP32-C6 (on-chip ADC)</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/installation.html" class="nav-list-link">Installation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/quickstart.html" class="nav-list-link">Quick start</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/troubleshooting.html" class="nav-list-link">Troubleshooting</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="HardFOC MCP9700 Driver submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-mcp9700-driver/development/" class="nav-list-link">HardFOC MCP9700 Driver</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="📚 Documentation submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-mcp9700-driver/development/docs/" class="nav-list-link">📚 Documentation</a><ul class="nav-list"><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/installation/" class="nav-list-link">🛠️ Installation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/quickstart/" class="nav-list-link">⚡ Quick start</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/transfer_function/" class="nav-list-link">📈 Transfer function</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/hardware_setup/" class="nav-list-link">🔌 Hardware setup — ESP32-C6</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/cmake_integration/" class="nav-list-link">⚙️ CMake integration</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/examples/" class="nav-list-link">💡 Examples</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/api_reference/" class="nav-list-link">📖 API reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/troubleshooting/" class="nav-list-link">🐛 Troubleshooting</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/datasheet/" class="nav-list-link">📄 Datasheet & manufacturer</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/examples/esp32/" class="nav-list-link">ESP32 MCP9700 examples (ESP32-C6)</a></li></ul>
   
 </nav>
 
@@ -254,7 +258,7 @@
 </h1>
     
 
-<p><strong>Microchip MCP9700 / MCP9700A linear active thermistor — voltage to °C</strong></p>
+<p><strong>Microchip <a href="https://www.microchip.com/en-us/product/MCP9700">MCP9700</a> / <a href="https://www.microchip.com/en-us/product/MCP9700A">MCP9700A</a> linear active thermistor — analog voltage to °C</strong></p>
 
 <p><a href="https://en.cppreference.com/w/cpp/17"><img src="https://img.shields.io/badge/C%2B%2B-17-blue.svg" alt="C++" /></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License" /></a>
@@ -270,14 +274,30 @@
     
 
 <ol>
+  <li><a href="#live-documentation">Live documentation</a></li>
   <li><a href="#overview">Overview</a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#quick-start">Quick start</a></li>
   <li><a href="#repository-layout">Repository layout</a></li>
-  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#documentation-map">Documentation map</a></li>
+  <li><a href="#references">References</a></li>
   <li><a href="#esp32-examples">ESP32 examples</a></li>
   <li><a href="#license">License</a></li>
 </ol>
+<h2 id="live-documentation">
+  
+  
+    <a href="#live-documentation" class="anchor-heading" aria-labelledby="live-documentation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Live documentation
+  
+  
+</h2>
+    
+
+<blockquote>
+  <p><strong><a href="https://n3b3x.github.io/hf-mcp9700-driver/">Complete documentation site (GitHub Pages)</a></strong> — guides, hardware diagrams, transfer function, API reference, and ESP32 walkthroughs.</p>
+</blockquote>
+
+<p>On GitHub you can browse the same content under <a href="/hf-mcp9700-driver/development/docs/"><code class="language-plaintext highlighter-rouge">docs/</code></a>.</p>
 <h2 id="overview">
   
   
@@ -287,11 +307,23 @@
 </h2>
     
 
-<p>The MCP9700 family outputs an analog voltage proportional to temperature. This repository provides a <strong>header-only</strong> C++17 template, <code class="language-plaintext highlighter-rouge">hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;</code>, that converts ADC readings (volts) into degrees Celsius using the typical transfer function from the datasheet:</p>
+<p>The MCP9700 family outputs an <strong>analog voltage proportional to temperature</strong>. This repository provides a <strong>header-only</strong> C++17 template, <code class="language-plaintext highlighter-rouge">hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;</code>, that converts ADC readings in <strong>volts</strong> into <strong>degrees Celsius</strong> using the <strong>typical</strong> linear model from the Microchip datasheet:</p>
 
-<p><code class="language-plaintext highlighter-rouge">T_C ≈ (Vout − 0.5 V) / (10 mV/°C)</code></p>
+<p><code class="language-plaintext highlighter-rouge">T_C ≈ (Vout − 0.5 V) / (10 mV/°C)</code> — override <code class="language-plaintext highlighter-rouge">v_zero_c</code> and <code class="language-plaintext highlighter-rouge">v_per_c</code> in the constructor when you calibrate or use alternate datasheet coefficients.</p>
 
-<p>You supply a small <strong>ADC adapter</strong> type with <code class="language-plaintext highlighter-rouge">EnsureInitialized()</code> and <code class="language-plaintext highlighter-rouge">ReadChannelV(uint8_t channel, float* voltage_v)</code> returning <strong>0</strong> on success (aligned with HardFOC <code class="language-plaintext highlighter-rouge">hf_adc_err_t</code> and similar patterns).</p>
+<p>You implement a small <strong>ADC adapter</strong> with <code class="language-plaintext highlighter-rouge">EnsureInitialized()</code> and <code class="language-plaintext highlighter-rouge">ReadChannelV(uint8_t channel, float* voltage_v)</code> returning <strong>0</strong> on success (aligned with HardFOC-style <code class="language-plaintext highlighter-rouge">hf_adc_err_t</code> conventions).</p>
+
+<pre><code class="language-mermaid">flowchart LR
+  subgraph Sensor["MCP9700"]
+    Vout["Vout (analog)"]
+  end
+  subgraph MCU["Your MCU"]
+    ADC["ADC adapter\nReadChannelV → volts"]
+    DRV["Mcp9700Thermistor"]
+    TC["Temperature °C"]
+  end
+  Vout --&gt; ADC --&gt; DRV --&gt; TC
+</code></pre>
 <h2 id="features">
   
   
@@ -302,10 +334,11 @@
     
 
 <ul>
-  <li>Header-only, no runtime library for the core driver</li>
-  <li>Configurable 0 °C offset and V/°C slope (defaults match MCP9700/MCP9700A typical values)</li>
-  <li>Version macro and <code class="language-plaintext highlighter-rouge">GetMcp9700DriverVersion()</code> string from CMake-generated header</li>
-  <li>ESP-IDF <strong>ESP32-C6</strong> example using <code class="language-plaintext highlighter-rouge">adc_oneshot</code> + optional curve calibration on <strong>ADC1 channel 0 (GPIO0)</strong></li>
+  <li><strong>Header-only</strong> core — no static library required for the driver itself</li>
+  <li><strong>Configurable</strong> 0 °C offset and V/°C slope (defaults match MCP9700/MCP9700A typical values)</li>
+  <li><strong>Version string</strong> via CMake-generated <code class="language-plaintext highlighter-rouge">mcp9700_version.h</code> and <code class="language-plaintext highlighter-rouge">GetMcp9700DriverVersion()</code></li>
+  <li><strong>ESP-IDF ESP32-C6</strong> example: <code class="language-plaintext highlighter-rouge">adc_oneshot</code>, optional <strong>curve calibration</strong>, default <strong>ADC1 CH0 (GPIO0)</strong></li>
+  <li><strong>CI</strong> for ESP32 examples and <strong>docs link checking</strong> aligned with other HardFOC drivers</li>
 </ul>
 <h2 id="quick-start">
   
@@ -335,10 +368,8 @@
 17
 18
 19
-20
 </pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">"mcp9700_thermistor.hpp"</span><span class="cp">
 </span>
-<span class="c1">// Your platform must implement EnsureInitialized() and ReadChannelV(...)-&gt;int</span>
 <span class="k">struct</span> <span class="nc">MyAdc</span> <span class="p">{</span>
   <span class="kt">bool</span> <span class="n">EnsureInitialized</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
   <span class="kt">int</span> <span class="n">ReadChannelV</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">ch</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
@@ -357,6 +388,8 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>More detail: <a href="/hf-mcp9700-driver/development/docs/quickstart/">Quick start</a> · <a href="/hf-mcp9700-driver/development/docs/installation/">Installation</a> · <a href="/hf-mcp9700-driver/development/docs/cmake_integration/">CMake integration</a>.</p>
 <h2 id="repository-layout">
   
   
@@ -375,47 +408,125 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">inc/</code></td>
+      <td><a href="inc/"><code class="language-plaintext highlighter-rouge">inc/</code></a></td>
       <td>Public headers (<code class="language-plaintext highlighter-rouge">mcp9700_thermistor.hpp</code>, generated <code class="language-plaintext highlighter-rouge">mcp9700_version.h</code>)</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">src/</code></td>
+      <td><a href="src/"><code class="language-plaintext highlighter-rouge">src/</code></a></td>
       <td>Template implementation (<code class="language-plaintext highlighter-rouge">mcp9700_thermistor.ipp</code>)</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cmake/</code></td>
+      <td><a href="cmake/"><code class="language-plaintext highlighter-rouge">cmake/</code></a></td>
       <td><code class="language-plaintext highlighter-rouge">hf_mcp9700_build_settings.cmake</code> for embedding in larger CMake trees</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">docs/</code></td>
-      <td>Markdown guides and Jekyll/Doxygen inputs</td>
+      <td><a href="/hf-mcp9700-driver/development/docs/"><code class="language-plaintext highlighter-rouge">docs/</code></a></td>
+      <td>Markdown guides, diagrams (<a href="docs/assets/"><code class="language-plaintext highlighter-rouge">docs/assets/</code></a>), Jekyll site input</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">examples/esp32/</code></td>
-      <td>ESP-IDF project (ESP32-C6); <strong><code class="language-plaintext highlighter-rouge">scripts/</code> is a git submodule</strong></td>
+      <td><a href="examples/esp32/"><code class="language-plaintext highlighter-rouge">examples/esp32/</code></a></td>
+      <td>ESP-IDF project (ESP32-C6); <code class="language-plaintext highlighter-rouge">scripts/</code> is a <strong>git submodule</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">_config/</code></td>
-      <td>Doxygen, Jekyll, clang-format/tidy, CI doc tooling</td>
+      <td><a href="_config/"><code class="language-plaintext highlighter-rouge">_config/</code></a></td>
+      <td>Doxygen, Jekyll, format/lint, CI tooling</td>
     </tr>
   </tbody>
 </table></div>
-<h2 id="documentation">
+<h2 id="documentation-map">
   
   
-    <a href="#documentation" class="anchor-heading" aria-labelledby="documentation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation
+    <a href="#documentation-map" class="anchor-heading" aria-labelledby="documentation-map"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation map
   
   
 </h2>
     
 
-<ul>
-  <li><a href="/hf-mcp9700-driver/development/docs/">Documentation index</a></li>
-  <li><a href="/hf-mcp9700-driver/development/docs/hardware_setup.html">Hardware setup (ESP32-C6 ADC pin)</a></li>
-  <li><a href="/hf-mcp9700-driver/development/docs/cmake_integration.html">CMake integration</a></li>
-</ul>
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Guide</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/">Documentation home</a></td>
+      <td>Full table of contents and recommended reading order</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/installation/">Installation</a></td>
+      <td>Toolchain, includes, generated headers</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/quickstart/">Quick start</a></td>
+      <td>Minimal adapter + read path</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/transfer_function/">Transfer function</a></td>
+      <td>Equations, typical curve, calibration</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/hardware_setup/">Hardware setup — ESP32-C6</a></td>
+      <td>Wiring, ADC attenuation, pin map</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/cmake_integration/">CMake integration</a></td>
+      <td><code class="language-plaintext highlighter-rouge">HF_MCP9700_*</code> variables and targets</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/examples/">Examples</a></td>
+      <td>ESP-IDF example overview</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/api_reference/">API reference</a></td>
+      <td>Class, adapter contract, constants</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/troubleshooting/">Troubleshooting</a></td>
+      <td>Common failures</td>
+    </tr>
+    <tr>
+      <td><a href="/hf-mcp9700-driver/development/docs/datasheet/">Datasheet &amp; manufacturer links</a></td>
+      <td>Official PDFs and product pages</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="references">
+  
+  
+    <a href="#references" class="anchor-heading" aria-labelledby="references"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> References
+  
+  
+</h2>
+    
 
-<p>Live HTML (when published): <a href="https://n3b3x.github.io/hf-mcp9700-driver/">GitHub Pages</a>.</p>
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Microchip MCP9700 product</td>
+      <td><a href="https://www.microchip.com/en-us/product/MCP9700">https://www.microchip.com/en-us/product/MCP9700</a></td>
+    </tr>
+    <tr>
+      <td>Microchip MCP9700A product</td>
+      <td><a href="https://www.microchip.com/en-us/product/MCP9700A">https://www.microchip.com/en-us/product/MCP9700A</a></td>
+    </tr>
+    <tr>
+      <td>ESP-IDF ADC (ESP32-C6)</td>
+      <td><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc.html">https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc.html</a></td>
+    </tr>
+    <tr>
+      <td>C++17 language reference</td>
+      <td><a href="https://en.cppreference.com/w/cpp/17">https://en.cppreference.com/w/cpp/17</a></td>
+    </tr>
+  </tbody>
+</table></div>
 <h2 id="esp32-examples">
   
   
@@ -425,7 +536,7 @@
 </h2>
     
 
-<p>Clone with submodules so <code class="language-plaintext highlighter-rouge">examples/esp32/scripts</code> (build/flash helpers) is present:</p>
+<p>Clone <strong>with submodules</strong> so <code class="language-plaintext highlighter-rouge">examples/esp32/scripts</code> (build/flash helpers) is present:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -447,7 +558,7 @@ git submodule update <span class="nt">--init</span> <span class="nt">--recursive
 ./scripts/flash_app.sh mcp9700_esp32c6_example Debug
 </pre></td></tr></tbody></table></div></code></pre></div></div>
 
-<p>See <a href="/hf-mcp9700-driver/development/examples/esp32/">examples/esp32/README.md</a> for <code class="language-plaintext highlighter-rouge">idf.py</code> usage and wiring.</p>
+<p>See <a href="/hf-mcp9700-driver/development/examples/esp32/">examples/esp32/README.md</a> for <code class="language-plaintext highlighter-rouge">idf.py</code> usage, wiring, and logs.</p>
 <h2 id="license">
   
   
@@ -462,7 +573,16 @@ git submodule update <span class="nt">--init</span> <span class="nt">--recursive
           
 
           
-            
+            <hr>
+<h2 class="text-delta">Table of contents</h2>
+
+<ul>
+  
+  <li>
+    <a href="/hf-mcp9700-driver/development/docs/">📚 Documentation</a>
+  </li>
+  
+</ul>
           
         </main>
         

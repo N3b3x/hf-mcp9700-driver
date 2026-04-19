@@ -15,7 +15,7 @@
   
 
     
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(6)) > a,
+    .site-nav > ul.nav-list:first-child > li:not(:nth-child(2)) > a,
     .site-nav > ul.nav-list:first-child > li > ul > li a {
       background-image: none;
     }
@@ -25,12 +25,12 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(6) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > a {
       font-weight: 600;
       text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(6) > button svg {
+    }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg {
       transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(6) > ul.nav-list {
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list {
       display: block;
     }
   </style>
@@ -166,7 +166,11 @@
   <nav aria-label="Main" id="site-nav" class="site-nav">
   
   
-    <ul class="nav-list"><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/" class="nav-list-link">HardFOC MCP9700 Driver</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/" class="nav-list-link">Documentation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/api_reference.html" class="nav-list-link">API reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/cmake_integration.html" class="nav-list-link">CMake integration</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/datasheet/" class="nav-list-link">Datasheet reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/examples/esp32/" class="nav-list-link">ESP32 MCP9700 examples (ESP32-C6)</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/examples.html" class="nav-list-link">Examples</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/hardware_setup.html" class="nav-list-link">Hardware setup — ESP32-C6 (on-chip ADC)</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/installation.html" class="nav-list-link">Installation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/quickstart.html" class="nav-list-link">Quick start</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/troubleshooting.html" class="nav-list-link">Troubleshooting</a></li></ul>
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="HardFOC MCP9700 Driver submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-mcp9700-driver/development/" class="nav-list-link">HardFOC MCP9700 Driver</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="📚 Documentation submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/hf-mcp9700-driver/development/docs/" class="nav-list-link">📚 Documentation</a><ul class="nav-list"><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/installation/" class="nav-list-link">🛠️ Installation</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/quickstart/" class="nav-list-link">⚡ Quick start</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/transfer_function/" class="nav-list-link">📈 Transfer function</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/hardware_setup/" class="nav-list-link">🔌 Hardware setup — ESP32-C6</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/cmake_integration/" class="nav-list-link">⚙️ CMake integration</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/examples/" class="nav-list-link">💡 Examples</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/api_reference/" class="nav-list-link">📖 API reference</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/troubleshooting/" class="nav-list-link">🐛 Troubleshooting</a></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/docs/datasheet/" class="nav-list-link">📄 Datasheet & manufacturer</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/hf-mcp9700-driver/development/examples/esp32/" class="nav-list-link">ESP32 MCP9700 examples (ESP32-C6)</a></li></ul>
   
 </nav>
 
@@ -254,7 +258,11 @@
 </h1>
     
 
-<p>ESP-IDF examples for the MCP9700 linear thermistor using the on-chip <strong>ADC</strong> (not an external SPI/I2C ADC).</p>
+<p>ESP-IDF examples for the <strong>Microchip MCP9700 / MCP9700A</strong> using the ESP32-C6 <strong>on-chip SAR ADC</strong> (no external SPI/I2C ADC required).</p>
+
+<p><strong>Documentation:</strong> <a href="/hf-mcp9700-driver/development/docs/">Docs home</a> · <a href="/hf-mcp9700-driver/development/docs/hardware_setup/">Hardware setup</a> · <a href="/hf-mcp9700-driver/development/docs/examples/">Examples guide</a> · <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc.html">ESP-IDF ADC (ESP32-C6)</a></p>
+
+<p><img src="/hf-mcp9700-driver/development/docs/assets/mcp9700-wiring.svg" alt="Wiring overview" /></p>
 <h2 id="submodule-required-for-scriptsbuild_appsh">
   
   
@@ -305,7 +313,7 @@ git submodule update <span class="nt">--init</span> <span class="nt">--recursive
   </tbody>
 </table></div>
 
-<p>Edit <code class="language-plaintext highlighter-rouge">main/mcp9700_esp32c6_example.cpp</code> if you use another ADC-capable GPIO (update <code class="language-plaintext highlighter-rouge">ADC_CHANNEL_*</code> and attenuation to keep Vout in range).</p>
+<p>Edit <code class="language-plaintext highlighter-rouge">main/mcp9700_esp32c6_example.cpp</code> if you use another ADC-capable GPIO (update <code class="language-plaintext highlighter-rouge">ADC_CHANNEL_*</code> and attenuation to keep Vout in range). See also the <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc_oneshot.html">ADC oneshot API</a>.</p>
 <h2 id="build-with-scripts">
   
   
