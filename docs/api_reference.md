@@ -1,4 +1,15 @@
+---
+layout: default
+title: "📖 API reference"
+description: "Mcp9700Thermistor template and adapter contract"
+nav_order: 9
+parent: "📚 Documentation"
+permalink: /docs/api_reference/
+---
+
 # API reference
+
+Full header: [`inc/mcp9700_thermistor.hpp`](https://github.com/N3b3x/hf-mcp9700-driver/blob/main/inc/mcp9700_thermistor.hpp) · implementation: [`src/mcp9700_thermistor.ipp`](https://github.com/N3b3x/hf-mcp9700-driver/blob/main/src/mcp9700_thermistor.ipp)
 
 ## `hf::mcp9700::Mcp9700Thermistor<AdcType>`
 
@@ -24,5 +35,9 @@
 
 ## Namespace constants
 
-- `hf::mcp9700::kDefaultVoltsAtZeroC` — 0.5F  
-- `hf::mcp9700::kDefaultVoltsPerCelsius` — 0.01F  
+- `hf::mcp9700::kDefaultVoltsAtZeroC` — `0.5F`  
+- `hf::mcp9700::kDefaultVoltsPerCelsius` — `0.01F`  
+
+## Doxygen
+
+When building HTML API docs locally, use the repository [`_config/Doxyfile`](https://github.com/N3b3x/hf-mcp9700-driver/blob/main/_config/Doxyfile) — same pattern as other HardFOC drivers.
