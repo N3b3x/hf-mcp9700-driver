@@ -42,12 +42,7 @@ Values assume **3.3 V** supply context as in many embedded designs; the sensor i
 
 ## Signal processing path
 
-```mermaid
-flowchart LR
-  A["MCP9700 Vout"] --> B["Your ADC\n(volts)"]
-  B --> C["Mcp9700Thermistor\nReadTemperatureCelsius"]
-  C --> D["T in °C"]
-```
+![MCP9700 signal-processing chain](assets/mcp9700-signal-flow.svg)
 
 1. **ADC** must report **volts** at the MCP9700 output (after divider/attenuator if any).  
 2. **Driver** subtracts `v_zero_c` and divides by `v_per_c`.  

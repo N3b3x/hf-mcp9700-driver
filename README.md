@@ -45,18 +45,7 @@ You implement a small **ADC adapter** with `EnsureInitialized()` and
 `ReadChannelV(uint8_t channel, float* voltage_v)` returning **0** on success
 (aligned with HardFOC-style `hf_adc_err_t` conventions).
 
-```mermaid
-flowchart LR
-  subgraph Sensor["MCP9700"]
-    Vout["Vout (analog)"]
-  end
-  subgraph MCU["Your MCU"]
-    ADC["ADC adapter\nReadChannelV → volts"]
-    DRV["Mcp9700Thermistor"]
-    TC["Temperature °C"]
-  end
-  Vout --> ADC --> DRV --> TC
-```
+![MCP9700 signal-processing chain](docs/assets/mcp9700-signal-flow.svg)
 
 ### 🔀 Chip Compatibility
 

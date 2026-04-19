@@ -1,41 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="t2 d2">
-  <title id="t2">MCP9700 typical output voltage vs temperature</title>
-  <desc id="d2">Linear region using typical 500 mV at 0C and 10 mV per C from Microchip datasheet</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380" role="img" aria-labelledby="t-tf d-tf">
+  <title id="t-tf">MCP9700 typical output voltage vs temperature</title>
+  <desc id="d-tf">Linear region using the typical 500 mV at 0 degC intercept and 10 mV per degC slope from the Microchip datasheet.</desc>
   <defs>
-    <style><![CDATA[
-      .bg { fill: #0f1419; }
-      .axis { stroke: #5c7c99; stroke-width: 1.5; }
-      .grid { stroke: #2a3a4d; stroke-width: 1; stroke-dasharray: 4 4; }
-      .curve { stroke: #4ecdc4; stroke-width: 3; fill: none; }
-      .txt { fill: #e6edf3; font-family: system-ui, sans-serif; font-size: 13px; }
-      .small { fill: #8ba3bf; font-size: 11px; }
+    <style type="text/css"><![CDATA[
+      .panel  { fill: #ffffff; stroke: #1a365d; stroke-width: 2; }
+      .axis   { stroke: #1a365d; stroke-width: 1.5; }
+      .grid   { stroke: #cbd5e0; stroke-width: 1; stroke-dasharray: 4 4; }
+      .curve  { stroke: #2c5282; stroke-width: 3; fill: none; }
+      .marker { fill: #c05621; stroke: #1a365d; stroke-width: 1.5; }
+      .head   { font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; fill: #1a365d; text-anchor: middle; }
+      .axisL  { font-family: system-ui, sans-serif; font-size: 13px; fill: #1a202c; }
+      .small  { font-family: system-ui, sans-serif; font-size: 11px; fill: #4a5568; }
+      .mono   { font-family: "DejaVu Sans Mono", Consolas, monospace; font-size: 11px; fill: #2d3748; }
+      .eq     { font-family: system-ui, sans-serif; font-size: 12px; fill: #1a202c; text-anchor: middle; font-style: italic; }
     ]]></style>
   </defs>
-  <rect class="bg" width="560" height="360" rx="8"/>
-  <text class="txt" x="280" y="28" text-anchor="middle" font-size="15" font-weight="600">Typical output vs temperature (MCP9700/MCP9700A)</text>
-  <text class="small" x="280" y="48" text-anchor="middle">T_C H (Vout  V€) / (mV/°C)  defaults: V€ = 0.5 V, 10 mV/°C</text>
-  <!-- Plot area -->
-  <rect x="70" y="70" width="420" height="240" fill="none" stroke="#3d5a80" stroke-width="1"/>
-  <!-- Grid -->
-  <g>
-    <line class="grid" x1="70" y1="150" x2="490" y2="150"/>
-    <line class="grid" x1="70" y1="230" x2="490" y2="230"/>
-    <line class="grid" x1="198" y1="70" x2="198" y2="310"/>
-    <line class="grid" x1="326" y1="70" x2="326" y2="310"/>
-    <line class="grid" x1="454" y1="70" x2="454" y2="310"/>
-  </g>
-  <!-- Axes labels -->
-  <text class="txt" x="280" y="340" text-anchor="middle">Temperature (°C)</text>
-  <text class="txt" transform="rotate(-90 24 190)" x="24" y="190" text-anchor="middle">Vout (V)</text>
-  <text class="small" x="70" y="330">40</text>
-  <text class="small" x="250" y="330" text-anchor="middle">25</text>
-  <text class="small" x="490" y="330" text-anchor="end">125</text>
-  <text class="small" x="58" y="314">0.1</text>
-  <text class="small" x="58" y="174">0.75</text>
-  <text class="small" x="58" y="78">1.75</text>
-  <!-- Linear curve: map T -40..125 to x, V roughly 0.1 to 1.75 -->
-  <path class="curve" d="M 70 300 Q 198 200 326 140 T 490 76"/>
-  <circle cx="326" cy="140" r="5" fill="#4ecdc4"/>
-  <text class="small" x="336" y="130">~25 °C ’ ~0.75 V (typ.)</text>
+
+  <text class="head" x="300" y="22">Typical MCP9700 / MCP9700A output vs temperature</text>
+  <text class="eq"   x="300" y="40">T (&#176;C) = (Vout - 0.5 V) / 0.010 V/&#176;C</text>
+
+  <rect class="panel" x="70" y="60" width="500" height="260" rx="4"/>
+
+  <line class="grid" x1="115.45" y1="60"  x2="115.45" y2="320"/>
+  <line class="grid" x1="191.21" y1="60"  x2="191.21" y2="320"/>
+  <line class="grid" x1="266.97" y1="60"  x2="266.97" y2="320"/>
+  <line class="grid" x1="342.73" y1="60"  x2="342.73" y2="320"/>
+  <line class="grid" x1="418.48" y1="60"  x2="418.48" y2="320"/>
+  <line class="grid" x1="494.24" y1="60"  x2="494.24" y2="320"/>
+
+  <line class="grid" x1="70" y1="296.36" x2="570" y2="296.36"/>
+  <line class="grid" x1="70" y1="257.00" x2="570" y2="257.00"/>
+  <line class="grid" x1="70" y1="217.61" x2="570" y2="217.61"/>
+  <line class="grid" x1="70" y1="178.18" x2="570" y2="178.18"/>
+  <line class="grid" x1="70" y1="138.79" x2="570" y2="138.79"/>
+  <line class="grid" x1="70" y1="99.39"  x2="570" y2="99.39"/>
+
+  <line class="axis" x1="70" y1="320" x2="570" y2="320"/>
+  <line class="axis" x1="70" y1="60"  x2="70"  y2="320"/>
+
+  <text class="small" x="70"     y="338" text-anchor="middle">-40</text>
+  <text class="small" x="115.45" y="338" text-anchor="middle">-25</text>
+  <text class="small" x="191.21" y="338" text-anchor="middle">0</text>
+  <text class="small" x="266.97" y="338" text-anchor="middle">25</text>
+  <text class="small" x="342.73" y="338" text-anchor="middle">50</text>
+  <text class="small" x="418.48" y="338" text-anchor="middle">75</text>
+  <text class="small" x="494.24" y="338" text-anchor="middle">100</text>
+  <text class="small" x="570"    y="338" text-anchor="middle">125</text>
+
+  <text class="small" x="62" y="324" text-anchor="end">0.10</text>
+  <text class="small" x="62" y="300" text-anchor="end">0.25</text>
+  <text class="small" x="62" y="261" text-anchor="end">0.50</text>
+  <text class="small" x="62" y="221" text-anchor="end">0.75</text>
+  <text class="small" x="62" y="182" text-anchor="end">1.00</text>
+  <text class="small" x="62" y="143" text-anchor="end">1.25</text>
+  <text class="small" x="62" y="103" text-anchor="end">1.50</text>
+  <text class="small" x="62" y="64"  text-anchor="end">1.75</text>
+
+  <line class="curve" x1="70" y1="320" x2="570" y2="60"/>
+
+  <circle class="marker" cx="266.97" cy="217.61" r="5"/>
+  <text class="mono" x="276" y="214">25 &#176;C &#8594; 0.75 V (typ.)</text>
+
+  <text class="axisL" x="320" y="368" text-anchor="middle">Temperature (&#176;C)</text>
+  <text class="axisL" transform="rotate(-90 22 190)" x="22" y="190" text-anchor="middle">Vout (V)</text>
 </svg>
