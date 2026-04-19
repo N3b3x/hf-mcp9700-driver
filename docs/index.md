@@ -24,6 +24,7 @@ Your platform must measure **Vout in volts** at the MCP9700 output (after any ex
 | [Examples](examples.md) | ESP-IDF example overview |
 | [API reference](api_reference.md) | Class and free functions |
 | [Troubleshooting](troubleshooting.md) | Common issues |
+| [Datasheet reference](datasheet/README.md) | Official Microchip PDF (not redistributed here) |
 
 ## Source layout
 
