@@ -97,7 +97,7 @@ $(function(){initNavTree('md_docs_2transfer__function.html',''); initResizable()
   <div class="headertitle"><div class="title">Transfer function</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md58"></a> The driver uses the <b>typical</b> linear relationship from the Microchip <b><a href="https://www.microchip.com/en-us/product/MCP9700">MCP9700 family datasheet</a></b> (see also <a href="https://www.microchip.com/en-us/product/MCP9700A">MCP9700A</a>):</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md60"></a> The driver uses the <b>typical</b> linear relationship from the Microchip <b><a href="https://www.microchip.com/en-us/product/MCP9700">MCP9700 family datasheet</a></b> (see also <a href="https://www.microchip.com/en-us/product/MCP9700A">MCP9700A</a>):</p>
 <p><code>T_C = (Vout − v_zero_c) / v_per_c</code></p>
 <p>Default constructor arguments match the usual published typicals:</p>
 <table class="markdownTable">
@@ -109,11 +109,11 @@ $(function(){initNavTree('md_docs_2transfer__function.html',''); initResizable()
 <td class="markdownTableBodyNone"><code>v_per_c</code>   </td><td class="markdownTableBodyNone"><code>0.01</code> V/°C   </td><td class="markdownTableBodyNone"><b>10 mV/°C</b> sensitivity (typical)   </td></tr>
 </table>
 <p>Override both if you trim the sensor or use alternate coefficients from the <b>Electrical Characteristics</b> tables.</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 Typical curve (illustration)</h1>
 <p>The following figure is a <b>schematic illustration</b> of the linear model over temperature; always use your ADC reading in <b>volts</b> at the pin after MCU scaling/attenuation.</p>
 <p><img src="assets/mcp9700-transfer.svg" alt="Typical MCP9700 output vs temperature" style="pointer-events: none;" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md60"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 Numerical examples (typical model)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -130,7 +130,7 @@ Numerical examples (typical model)</h1>
 <td class="markdownTableBodyNone">125   </td><td class="markdownTableBodyNone">1.75   </td></tr>
 </table>
 <p>Values assume <b>3.3 V</b> supply context as in many embedded designs; the sensor is ratiometric to its <b>Vdd</b> — see the datasheet for supply range and load conditions.</p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md63"></a>
 Signal processing path</h1>
 <div class="fragment"><div class="line">flowchart LR</div>
 <div class="line">  A[&quot;MCP9700 Vout&quot;] --&gt; B[&quot;Your ADC\n(volts)&quot;]</div>
@@ -143,7 +143,7 @@ Signal processing path</h1>
 </li>
 <li><b>Calibration:</b> measure at known temperatures and adjust <code>v_zero_c</code> / <code>v_per_c</code>, or correct in your adapter.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md64"></a>
 Related</h1>
 <ul>
 <li><a class="el" href="md_docs_2api__reference.html">API reference</a> — constructor parameters <br  />
