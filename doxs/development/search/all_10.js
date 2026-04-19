@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['setup_20—_20esp32_20c6_20on_20chip_20adc_0',['Hardware setup — ESP32-C6 (on-chip ADC)',['../md_docs_2hardware__setup.html',1,'']]],
-  ['source_20layout_1',['Source layout',['../md_docs_2index.html#autotoc_md26',1,'']]],
-  ['standalone_20interface_20library_2',['Standalone interface library',['../md_docs_2cmake__integration.html#autotoc_md16',1,'']]],
-  ['start_3',['Quick start',['../md_docs_2quickstart.html',1,'']]],
-  ['start_4',['Quick start',['../index.html#autotoc_md4',1,'']]]
+  ['namespace_20constants_0',['Namespace constants',['../md_docs_2api__reference.html#autotoc_md15',1,'']]],
+  ['not_20found_1',['&lt;tt&gt;mcp9700_version.h&lt;/tt&gt; not found',['../md_docs_2troubleshooting.html#autotoc_md64',1,'']]],
+  ['notes_2',['Accuracy notes',['../md_docs_2hardware__setup.html#autotoc_md38',1,'']]],
+  ['numerical_20examples_20typical_20model_3',['Numerical examples (typical model)',['../md_docs_2transfer__function.html#autotoc_md60',1,'']]]
 ];

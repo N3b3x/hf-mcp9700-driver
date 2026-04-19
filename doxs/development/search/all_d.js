@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pattern_0',['Embedded in a larger project (HardFOC pattern)',['../md_docs_2cmake__integration.html#autotoc_md15',1,'']]],
-  ['project_20hardfoc_20pattern_1',['Embedded in a larger project (HardFOC pattern)',['../md_docs_2cmake__integration.html#autotoc_md15',1,'']]]
+  ['kdefaultvoltsatzeroc_0',['kDefaultVoltsAtZeroC',['../namespacehf_1_1mcp9700.html#a27400fbe7b26a2c086080f43e3b70c81',1,'hf::mcp9700']]],
+  ['kdefaultvoltspercelsius_1',['kDefaultVoltsPerCelsius',['../namespacehf_1_1mcp9700.html#ab863f3baa94f9573f162c7ffd5067e37',1,'hf::mcp9700']]]
 ];

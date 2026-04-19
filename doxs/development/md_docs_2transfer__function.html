@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HF-MCP9700 Driver: Hardware setup — ESP32-C6 (on-chip ADC)</title>
+<title>HF-MCP9700 Driver: Transfer function</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('md_docs_2hardware__setup.html',''); initResizable(); });
+$(function(){initNavTree('md_docs_2transfer__function.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,61 +94,65 @@ $(function(){initNavTree('md_docs_2hardware__setup.html',''); initResizable(); }
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Hardware setup — ESP32-C6 (on-chip ADC)</div></div>
+  <div class="headertitle"><div class="title">Transfer function</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md32"></a> The stock ESP-IDF example uses the <b>internal SAR ADC</b> to sample <b>MCP9700 Vout</b>. External SPI/I2C ADCs are not required.</p>
-<h1><a class="anchor" id="autotoc_md33"></a>
-Wiring diagram</h1>
-<p><img src="assets/mcp9700-wiring.svg" alt="MCP9700 to ESP32-C6 connections" style="pointer-events: none;" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md34"></a>
-ASCII reference (breadboard-friendly)</h1>
-<div class="fragment"><div class="line">      ESP32-C6                         MCP9700</div>
-<div class="line">     ┌─────────┐                     ┌──────────┐</div>
-<div class="line">3V3 ─┤         ├─────────────────────┤ Vdd      │</div>
-<div class="line">     │         │                     │          │</div>
-<div class="line">GND ─┤         ├─────────────────────┤ Vss      │</div>
-<div class="line">     │  GPIO0  ├─────────────────────┤ Vout     │</div>
-<div class="line">     │ (ADC1)  │                     └──────────┘</div>
-<div class="line">     └─────────┘</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md35"></a>
-Pin table</h1>
+<div class="textblock"><p><a class="anchor" id="autotoc_md58"></a> The driver uses the <b>typical</b> linear relationship from the Microchip <b><a href="https://www.microchip.com/en-us/product/MCP9700">MCP9700 family datasheet</a></b> (see also <a href="https://www.microchip.com/en-us/product/MCP9700A">MCP9700A</a>):</p>
+<p><code>T_C = (Vout − v_zero_c) / v_per_c</code></p>
+<p>Default constructor arguments match the usual published typicals:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">MCP9700 pin   </th><th class="markdownTableHeadNone">Connection    </th></tr>
+<th class="markdownTableHeadNone">Symbol   </th><th class="markdownTableHeadNone">Default   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Vdd   </td><td class="markdownTableBodyNone">3.3 V (same IO / ADC reference rail as your design)    </td></tr>
+<td class="markdownTableBodyNone"><code>v_zero_c</code>   </td><td class="markdownTableBodyNone"><code>0.5</code> V   </td><td class="markdownTableBodyNone">Output at <b>0 °C</b> (typical)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Vss   </td><td class="markdownTableBodyNone">Ground    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Vout   </td><td class="markdownTableBodyNone">MCU ADC input (example: <b>GPIO0</b> / <b>ADC1 channel 0</b>)   </td></tr>
+<td class="markdownTableBodyNone"><code>v_per_c</code>   </td><td class="markdownTableBodyNone"><code>0.01</code> V/°C   </td><td class="markdownTableBodyNone"><b>10 mV/°C</b> sensitivity (typical)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md36"></a>
-ESP32-C6 ADC mapping (default example)</h1>
-<p>From the ESP-IDF headers and TRM for your silicon revision:</p>
+<p>Override both if you trim the sensor or use alternate coefficients from the <b>Electrical Characteristics</b> tables.</p>
+<h1><a class="anchor" id="autotoc_md59"></a>
+Typical curve (illustration)</h1>
+<p>The following figure is a <b>schematic illustration</b> of the linear model over temperature; always use your ADC reading in <b>volts</b> at the pin after MCU scaling/attenuation.</p>
+<p><img src="assets/mcp9700-transfer.svg" alt="Typical MCP9700 output vs temperature" style="pointer-events: none;" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md60"></a>
+Numerical examples (typical model)</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">T (°C)   </th><th class="markdownTableHeadNone">Approx. Vout (V)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">−40   </td><td class="markdownTableBodyNone">0.10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0.50    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">25   </td><td class="markdownTableBodyNone">0.75    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">85   </td><td class="markdownTableBodyNone">1.35    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">125   </td><td class="markdownTableBodyNone">1.75   </td></tr>
+</table>
+<p>Values assume <b>3.3 V</b> supply context as in many embedded designs; the sensor is ratiometric to its <b>Vdd</b> — see the datasheet for supply range and load conditions.</p>
+<h1><a class="anchor" id="autotoc_md61"></a>
+Signal processing path</h1>
+<div class="fragment"><div class="line">flowchart LR</div>
+<div class="line">  A[&quot;MCP9700 Vout&quot;] --&gt; B[&quot;Your ADC\n(volts)&quot;]</div>
+<div class="line">  B --&gt; C[&quot;Mcp9700Thermistor\nReadTemperatureCelsius&quot;]</div>
+<div class="line">  C --&gt; D[&quot;T in °C&quot;]</div>
+</div><!-- fragment --><ol type="1">
+<li><b>ADC</b> must report <b>volts</b> at the MCP9700 output (after divider/attenuator if any). <br  />
+</li>
+<li><b>Driver</b> subtracts <code>v_zero_c</code> and divides by <code>v_per_c</code>. <br  />
+</li>
+<li><b>Calibration:</b> measure at known temperatures and adjust <code>v_zero_c</code> / <code>v_per_c</code>, or correct in your adapter.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md62"></a>
+Related</h1>
 <ul>
-<li><b>ADC unit:</b> <code>ADC_UNIT_1</code></li>
-<li><b>Channel:</b> <code>ADC_CHANNEL_0</code></li>
-<li><b>GPIO:</b> <b>GPIO0</b> (verify in the <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/hw-reference/index.html">ESP32-C6 hardware reference</a> and current <code>soc_caps.h</code>)</li>
+<li><a class="el" href="md_docs_2api__reference.html">API reference</a> — constructor parameters <br  />
+</li>
+<li><a class="el" href="md_docs_2hardware__setup.html">Hardware setup</a> — attenuation and voltage range <br  />
+</li>
+<li><a class="el" href="/home/runner/work/hf-mcp9700-driver/hf-mcp9700-driver/docs/datasheet/README.md#md_docs_2datasheet_2README">Datasheet reference</a> — official limits and accuracy <br  />
+ </li>
 </ul>
-<p><b>Attenuation:</b> <b>12 dB</b> is used in the example so the nominal <b>0–3.3 V</b> ADC window covers the MCP9700 output range for typical supplies.</p>
-<h1><a class="anchor" id="autotoc_md37"></a>
-ESP-IDF references</h1>
-<ul>
-<li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc_oneshot.html">ADC oneshot driver</a> — API used by the example <br  />
-</li>
-<li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc_calibration.html">ADC calibration</a> — optional curve fitting when supported <br  />
-</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md38"></a>
-Accuracy notes</h1>
-<ul>
-<li>Enable <b>adc_cali</b> curve fitting when <code>ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED</code> is true (see example). <br  />
-</li>
-<li>For production, measure offset/slope at known temperatures and pass **<code>v_zero_c</code> / <code>v_per_c</code>** to <a class="el" href="md_docs_2api__reference.html"><code>Mcp9700Thermistor</code></a>, or correct in firmware. <br  />
-</li>
-</ul>
-<p><b>Next:</b> <a class="el" href="md_docs_2examples.html">Examples →</a> · <a class="el" href="md_docs_2transfer__function.html">Transfer function →</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -97,20 +97,30 @@ $(function(){initNavTree('md_docs_2troubleshooting.html',''); initResizable(); }
   <div class="headertitle"><div class="title">Troubleshooting</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md32"></a> </p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md63"></a> </p>
+<h1><a class="anchor" id="autotoc_md64"></a>
 <code>mcp9700_version.h</code> not found</h1>
-<p>Run CMake so <code>hf_mcp9700_build_settings.cmake</code> can <code>configure_file</code> the version header, or add the generated include directory to your target.</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<p>Run CMake so <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/cmake/hf_mcp9700_build_settings.cmake"><code>cmake/hf_mcp9700_build_settings.cmake</code></a> can <code>configure_file</code> the version header, or add the generated include directory to your target. See <a class="el" href="md_docs_2installation.html">Installation</a> and <a class="el" href="md_docs_2cmake__integration.html">CMake integration</a>.</p>
+<h1><a class="anchor" id="autotoc_md65"></a>
 Temperature clearly wrong</h1>
 <ul>
-<li>Confirm <b>attenuation</b> covers MCP9700 Vout (≈ 0.1–1.75 V over −40–125 °C at 3.3 V supply; still stay within ADC range).</li>
-<li>Enable <b>adc calibration</b> when supported.</li>
-<li>Verify <b>GPIO ↔ ADC channel</b> mapping for your chip variant.</li>
+<li>Confirm <b>ADC attenuation</b> covers MCP9700 <b>Vout</b> (roughly <b>0.1–1.75 V</b> over −40–125 °C at 3.3 V supply — still stay within ADC range). <br  />
+</li>
+<li>Enable <b>adc calibration</b> when supported (<a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/adc_calibration.html">ESP-IDF calibration</a>). <br  />
+</li>
+<li>Verify <b>GPIO ↔ ADC channel</b> mapping for your chip variant (<a class="el" href="md_docs_2hardware__setup.html">hardware setup</a>). <br  />
+</li>
+<li>Revisit the <a class="el" href="md_docs_2transfer__function.html">transfer function</a> defaults vs your measured offset/slope.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md66"></a>
 <code>ReadChannelV</code> always fails</h1>
-<p>Return <b>0</b> only on success. Non-zero values are treated as failure by <code>Mcp9700Thermistor</code>. </p>
+<p>Return <b>0</b> only on success. Non-zero values are treated as failure by <code>Mcp9700Thermistor</code>.</p>
+<h1><a class="anchor" id="autotoc_md67"></a>
+CI / docs link check</h1>
+<p>Workflows live under <a href="https://github.com/N3b3x/hf-mcp9700-driver/tree/main/.github/workflows"><code>.github/workflows/</code></a>. Docs use <a href="https://github.com/N3b3x/hf-mcp9700-driver/blob/main/_config/lychee.toml"><code>_config/lychee.toml</code></a> to exclude vendor/submodule Markdown that is not maintained in-tree.</p>
+<h1><a class="anchor" id="autotoc_md68"></a>
+Still stuck?</h1>
+<p>Open an <a href="https://github.com/N3b3x/hf-mcp9700-driver/issues">issue</a> with hardware (MCU, supply, pin), IDF or toolchain version, and a minimal log. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

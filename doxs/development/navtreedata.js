@@ -26,45 +26,78 @@ var NAVTREE =
 [
   [ "HF-MCP9700 Driver", "index.html", [
     [ "Table of contents", "index.html#autotoc_md1", null ],
-    [ "Overview", "index.html#autotoc_md2", null ],
-    [ "Features", "index.html#autotoc_md3", null ],
-    [ "Quick start", "index.html#autotoc_md4", null ],
-    [ "Repository layout", "index.html#autotoc_md5", null ],
-    [ "Documentation", "index.html#autotoc_md6", null ],
-    [ "ESP32 examples", "index.html#autotoc_md7", null ],
-    [ "License", "index.html#autotoc_md8", null ],
+    [ "Live documentation", "index.html#autotoc_md2", null ],
+    [ "Overview", "index.html#autotoc_md3", null ],
+    [ "Features", "index.html#autotoc_md4", null ],
+    [ "Quick start", "index.html#autotoc_md5", null ],
+    [ "Repository layout", "index.html#autotoc_md6", null ],
+    [ "Documentation map", "index.html#autotoc_md7", null ],
+    [ "References", "index.html#autotoc_md8", null ],
+    [ "ESP32 examples", "index.html#autotoc_md9", null ],
+    [ "License", "index.html#autotoc_md10", null ],
     [ "API reference", "md_docs_2api__reference.html", [
-      [ "hf::mcp9700::Mcp9700Thermistor<AdcType>", "md_docs_2api__reference.html#autotoc_md10", null ],
-      [ "Adapter contract (AdcType)", "md_docs_2api__reference.html#autotoc_md11", null ],
-      [ "Free functions", "md_docs_2api__reference.html#autotoc_md12", null ],
-      [ "Namespace constants", "md_docs_2api__reference.html#autotoc_md13", null ]
+      [ "hf::mcp9700::Mcp9700Thermistor<AdcType>", "md_docs_2api__reference.html#autotoc_md12", null ],
+      [ "Adapter contract (AdcType)", "md_docs_2api__reference.html#autotoc_md13", null ],
+      [ "Free functions", "md_docs_2api__reference.html#autotoc_md14", null ],
+      [ "Namespace constants", "md_docs_2api__reference.html#autotoc_md15", null ],
+      [ "Doxygen", "md_docs_2api__reference.html#autotoc_md16", null ]
     ] ],
     [ "CMake integration", "md_docs_2cmake__integration.html", [
-      [ "Embedded in a larger project (HardFOC pattern)", "md_docs_2cmake__integration.html#autotoc_md15", null ],
-      [ "Standalone interface library", "md_docs_2cmake__integration.html#autotoc_md16", null ]
+      [ "Embedded in a larger project (HardFOC pattern)", "md_docs_2cmake__integration.html#autotoc_md18", null ],
+      [ "Standalone interface library", "md_docs_2cmake__integration.html#autotoc_md19", null ],
+      [ "Related", "md_docs_2cmake__integration.html#autotoc_md20", null ]
     ] ],
     [ "Examples", "md_docs_2examples.html", [
-      [ "ESP32-C6 (examples/esp32)", "md_docs_2examples.html#autotoc_md19", null ]
+      [ "ESP32-C6 (examples/esp32)", "md_docs_2examples.html#autotoc_md27", [
+        [ "Submodule", "md_docs_2examples.html#autotoc_md28", null ],
+        [ "Example source", "md_docs_2examples.html#autotoc_md29", null ],
+        [ "Full README", "md_docs_2examples.html#autotoc_md30", null ]
+      ] ],
+      [ "Other platforms", "md_docs_2examples.html#autotoc_md31", null ]
     ] ],
     [ "Hardware setup — ESP32-C6 (on-chip ADC)", "md_docs_2hardware__setup.html", [
-      [ "MCP9700 connections", "md_docs_2hardware__setup.html#autotoc_md21", null ],
-      [ "ESP32-C6 ADC mapping (default example)", "md_docs_2hardware__setup.html#autotoc_md22", null ],
-      [ "Accuracy notes", "md_docs_2hardware__setup.html#autotoc_md23", null ]
+      [ "Wiring diagram", "md_docs_2hardware__setup.html#autotoc_md33", null ],
+      [ "ASCII reference (breadboard-friendly)", "md_docs_2hardware__setup.html#autotoc_md34", null ],
+      [ "Pin table", "md_docs_2hardware__setup.html#autotoc_md35", null ],
+      [ "ESP32-C6 ADC mapping (default example)", "md_docs_2hardware__setup.html#autotoc_md36", null ],
+      [ "ESP-IDF references", "md_docs_2hardware__setup.html#autotoc_md37", null ],
+      [ "Accuracy notes", "md_docs_2hardware__setup.html#autotoc_md38", null ]
     ] ],
     [ "HF-MCP9700 documentation", "md_docs_2index.html", [
-      [ "Guides", "md_docs_2index.html#autotoc_md25", null ],
-      [ "Source layout", "md_docs_2index.html#autotoc_md26", null ]
+      [ "Documentation structure", "md_docs_2index.html#autotoc_md40", [
+        [ "Getting started", "md_docs_2index.html#autotoc_md41", null ],
+        [ "Hardware & integration", "md_docs_2index.html#autotoc_md42", null ],
+        [ "Reference & examples", "md_docs_2index.html#autotoc_md43", null ],
+        [ "Manufacturer", "md_docs_2index.html#autotoc_md44", null ]
+      ] ],
+      [ "Visual overview", "md_docs_2index.html#autotoc_md45", null ]
     ] ],
     [ "Installation", "md_docs_2installation.html", [
-      [ "Requirements", "md_docs_2installation.html#autotoc_md28", null ],
-      [ "Header-only layout", "md_docs_2installation.html#autotoc_md29", null ],
-      [ "Consume from CMake", "md_docs_2installation.html#autotoc_md30", null ]
+      [ "Prerequisites", "md_docs_2installation.html#autotoc_md47", null ],
+      [ "Obtain the source", "md_docs_2installation.html#autotoc_md48", null ],
+      [ "Header-only layout", "md_docs_2installation.html#autotoc_md49", null ],
+      [ "CMake (recommended)", "md_docs_2installation.html#autotoc_md50", null ],
+      [ "Verify", "md_docs_2installation.html#autotoc_md51", null ]
     ] ],
-    [ "Quick start", "md_docs_2quickstart.html", null ],
+    [ "Quick start", "md_docs_2quickstart.html", [
+      [ "Implement the adapter contract", "md_docs_2quickstart.html#autotoc_md53", null ],
+      [ "Construct the driver", "md_docs_2quickstart.html#autotoc_md54", null ],
+      [ "Initialize and read", "md_docs_2quickstart.html#autotoc_md55", null ],
+      [ "Optional calibration", "md_docs_2quickstart.html#autotoc_md56", null ],
+      [ "Source excerpt (reference)", "md_docs_2quickstart.html#autotoc_md57", null ]
+    ] ],
+    [ "Transfer function", "md_docs_2transfer__function.html", [
+      [ "Typical curve (illustration)", "md_docs_2transfer__function.html#autotoc_md59", null ],
+      [ "Numerical examples (typical model)", "md_docs_2transfer__function.html#autotoc_md60", null ],
+      [ "Signal processing path", "md_docs_2transfer__function.html#autotoc_md61", null ],
+      [ "Related", "md_docs_2transfer__function.html#autotoc_md62", null ]
+    ] ],
     [ "Troubleshooting", "md_docs_2troubleshooting.html", [
-      [ "mcp9700_version.h not found", "md_docs_2troubleshooting.html#autotoc_md33", null ],
-      [ "Temperature clearly wrong", "md_docs_2troubleshooting.html#autotoc_md34", null ],
-      [ "ReadChannelV always fails", "md_docs_2troubleshooting.html#autotoc_md35", null ]
+      [ "mcp9700_version.h not found", "md_docs_2troubleshooting.html#autotoc_md64", null ],
+      [ "Temperature clearly wrong", "md_docs_2troubleshooting.html#autotoc_md65", null ],
+      [ "ReadChannelV always fails", "md_docs_2troubleshooting.html#autotoc_md66", null ],
+      [ "CI / docs link check", "md_docs_2troubleshooting.html#autotoc_md67", null ],
+      [ "Still stuck?", "md_docs_2troubleshooting.html#autotoc_md68", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

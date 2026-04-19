@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['on_20chip_20adc_0',['Hardware setup — ESP32-C6 (on-chip ADC)',['../md_docs_2hardware__setup.html',1,'']]]
+  ['mcp9700_20documentation_0',['HF-MCP9700 documentation',['../md_docs_2index.html',1,'']]],
+  ['mcp9700_20driver_1',['HF-MCP9700 Driver',['../index.html',1,'']]]
 ];
