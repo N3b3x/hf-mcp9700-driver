@@ -1,0 +1,163 @@
+{"0": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "HF-MCP9700 Driver",
+    "content": "Microchip MCP9700 / MCP9700A linear active thermistor — voltage to °C . ",
+    "url": "/hf-mcp9700-driver/development/#hf-mcp9700-driver",
+    
+    "relUrl": "/#hf-mcp9700-driver"
+  },"1": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Table of contents",
+    "content": ". | Overview | Features | Quick start | Repository layout | Documentation | ESP32 examples | License | . ",
+    "url": "/hf-mcp9700-driver/development/#table-of-contents",
+    
+    "relUrl": "/#table-of-contents"
+  },"2": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Overview",
+    "content": "The MCP9700 family outputs an analog voltage proportional to temperature. This repository provides a header-only C++17 template, hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;, that converts ADC readings (volts) into degrees Celsius using the typical transfer function from the datasheet: . T_C ≈ (Vout − 0.5 V) / (10 mV/°C) . You supply a small ADC adapter type with EnsureInitialized() and ReadChannelV(uint8_t channel, float* voltage_v) returning 0 on success (aligned with HardFOC hf_adc_err_t and similar patterns). ",
+    "url": "/hf-mcp9700-driver/development/#overview",
+    
+    "relUrl": "/#overview"
+  },"3": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Features",
+    "content": ". | Header-only, no runtime library for the core driver | Configurable 0 °C offset and V/°C slope (defaults match MCP9700/MCP9700A typical values) | Version macro and GetMcp9700DriverVersion() string from CMake-generated header | ESP-IDF ESP32-C6 example using adc_oneshot + optional curve calibration on ADC1 channel 0 (GPIO0) | . ",
+    "url": "/hf-mcp9700-driver/development/#features",
+    
+    "relUrl": "/#features"
+  },"4": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Quick start",
+    "content": "| 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 . | #include \"mcp9700_thermistor.hpp\" // Your platform must implement EnsureInitialized() and ReadChannelV(...)-&gt;int struct MyAdc { bool EnsureInitialized() noexcept { return true; } int ReadChannelV(uint8_t ch, float* v) noexcept { if (!v || ch != 0) return 1; *v = measured_voltage_volts; return 0; } }; MyAdc adc; hf::mcp9700::Mcp9700Thermistor&lt;MyAdc&gt; mcp(&amp;adc, 0); if (mcp.Initialize()) { float t{}; if (mcp.ReadTemperatureCelsius(&amp;t)) { // use t } } . | . ",
+    "url": "/hf-mcp9700-driver/development/#quick-start",
+    
+    "relUrl": "/#quick-start"
+  },"5": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Repository layout",
+    "content": "| Path | Purpose | . | inc/ | Public headers (mcp9700_thermistor.hpp, generated mcp9700_version.h) | . | src/ | Template implementation (mcp9700_thermistor.ipp) | . | cmake/ | hf_mcp9700_build_settings.cmake for embedding in larger CMake trees | . | docs/ | Markdown guides and Jekyll/Doxygen inputs | . | examples/esp32/ | ESP-IDF project (ESP32-C6); scripts/ is a git submodule | . | _config/ | Doxygen, Jekyll, clang-format/tidy, CI doc tooling | . ",
+    "url": "/hf-mcp9700-driver/development/#repository-layout",
+    
+    "relUrl": "/#repository-layout"
+  },"6": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "Documentation",
+    "content": ". | Documentation index | Hardware setup (ESP32-C6 ADC pin) | CMake integration | . Live HTML (when published): GitHub Pages. ",
+    "url": "/hf-mcp9700-driver/development/#documentation",
+    
+    "relUrl": "/#documentation"
+  },"7": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "ESP32 examples",
+    "content": "Clone with submodules so examples/esp32/scripts (build/flash helpers) is present: . | 1 2 3 . | git clone --recursive https://github.com/N3b3x/hf-mcp9700-driver.git # or, after a non-recursive clone: git submodule update --init --recursive . | . Then: . | 1 2 3 4 . | cd examples/esp32 ./scripts/build_app.sh list ./scripts/build_app.sh mcp9700_esp32c6_example Debug ./scripts/flash_app.sh mcp9700_esp32c6_example Debug . | . See examples/esp32/README.md for idf.py usage and wiring. ",
+    "url": "/hf-mcp9700-driver/development/#esp32-examples",
+    
+    "relUrl": "/#esp32-examples"
+  },"8": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "License",
+    "content": "GPL-3.0 — see LICENSE. ",
+    "url": "/hf-mcp9700-driver/development/#license",
+    
+    "relUrl": "/#license"
+  },"9": {
+    "doc": "HardFOC MCP9700 Driver",
+    "title": "HardFOC MCP9700 Driver",
+    "content": " ",
+    "url": "/hf-mcp9700-driver/development/",
+    
+    "relUrl": "/"
+  },"10": {
+    "doc": "Documentation",
+    "title": "HF-MCP9700 documentation",
+    "content": "This driver implements the standard MCP9700/MCP9700A transfer function from the Microchip datasheet: . | Typical output at 0 °C: 0.5 V | Typical sensitivity: 10 mV/°C | . Your platform must measure Vout in volts at the MCP9700 output (after any external scaling) and pass that value through ReadChannelV. ",
+    "url": "/hf-mcp9700-driver/development/docs/#hf-mcp9700-documentation",
+    
+    "relUrl": "/docs/#hf-mcp9700-documentation"
+  },"11": {
+    "doc": "Documentation",
+    "title": "Guides",
+    "content": "| Guide | Description | . | Installation | Include paths and CMake | . | Quick start | Minimal adapter sketch | . | CMake integration | hf_mcp9700_build_settings.cmake | . | Hardware setup — ESP32-C6 | ADC pin and attenuation | . | Examples | ESP-IDF example overview | . | API reference | Class and free functions | . | Troubleshooting | Common issues | . | Datasheet reference | Official Microchip PDF (not redistributed here) | . ",
+    "url": "/hf-mcp9700-driver/development/docs/#guides",
+    
+    "relUrl": "/docs/#guides"
+  },"12": {
+    "doc": "Documentation",
+    "title": "Source layout",
+    "content": ". | inc/mcp9700_thermistor.hpp — template API | src/mcp9700_thermistor.ipp — template implementation | inc/mcp9700_version.h — generated by CMake from mcp9700_version.h.in | . ",
+    "url": "/hf-mcp9700-driver/development/docs/#source-layout",
+    
+    "relUrl": "/docs/#source-layout"
+  },"13": {
+    "doc": "Documentation",
+    "title": "Documentation",
+    "content": " ",
+    "url": "/hf-mcp9700-driver/development/docs/",
+    
+    "relUrl": "/docs/"
+  },"14": {
+    "doc": "API reference",
+    "title": "API reference",
+    "content": "# API reference ## `hf::mcp9700::Mcp9700Thermistor` | Method | Description | --- | --- | `Mcp9700Thermistor(AdcType* adc, uint8_t channel, float v0 = 0.5f, float vpc = 0.01f)` | Construct; non-owning `adc` pointer. | `bool Initialize()` | Calls `adc->EnsureInitialized()`. | `bool Deinitialize()` | Clears internal state. | `bool ReadTemperatureCelsius(float* t)` | Reads voltage via `ReadChannelV` and applies linear law. | `float VoltsAtZeroC() const` | Current 0 °C offset parameter. | `float VoltsPerCelsius() const` | Current sensitivity parameter. | ## Adapter contract (`AdcType`) - `bool EnsureInitialized() noexcept` - `int ReadChannelV(uint8_t channel, float* voltage_v) noexcept` — **0** = success ## Free functions | Function | Description | --- | --- | `GetMcp9700DriverVersion()` | Returns version string from generated `mcp9700_version.h`. | ## Namespace constants - `hf::mcp9700::kDefaultVoltsAtZeroC` — 0.5F - `hf::mcp9700::kDefaultVoltsPerCelsius` — 0.01F ",
+    "url": "/hf-mcp9700-driver/development/docs/api_reference.html",
+    
+    "relUrl": "/docs/api_reference.html"
+  },"15": {
+    "doc": "CMake integration",
+    "title": "CMake integration",
+    "content": "# CMake integration ## Embedded in a larger project (HardFOC pattern) ```cmake include(\"${CMAKE_SOURCE_DIR}/path/to/hf-mcp9700-driver/cmake/hf_mcp9700_build_settings.cmake\") target_include_directories(my_target PRIVATE ${HF_MCP9700_PUBLIC_INCLUDE_DIRS}) ``` `HF_MCP9700_PUBLIC_INCLUDE_DIRS` contains: - The `inc/` directory - The generated headers directory (`mcp9700_version.h`) ## Standalone interface library From the driver root: ```bash cmake -S . -B build cmake --build build ``` This exposes target `hf_mcp9700` (and alias `hf::mcp9700`) as an `INTERFACE` library. ",
+    "url": "/hf-mcp9700-driver/development/docs/cmake_integration.html",
+    
+    "relUrl": "/docs/cmake_integration.html"
+  },"16": {
+    "doc": "Examples",
+    "title": "Examples",
+    "content": "# Examples ## ESP32-C6 (`examples/esp32`) Application: `mcp9700_esp32c6_example` - Uses `esp_adc` oneshot driver and optional calibration. - Reads MCP9700 Vout on **GPIO0 / ADC1 CH0** by default. - Prints temperature every 500 ms. Initialize the `scripts` submodule before using `build_app.sh`: ```bash git submodule update --init --recursive cd examples/esp32 ./scripts/build_app.sh mcp9700_esp32c6_example Debug ``` See [examples/esp32/README.md](/hf-mcp9700-driver/development/examples/esp32/). ",
+    "url": "/hf-mcp9700-driver/development/docs/examples.html",
+    
+    "relUrl": "/docs/examples.html"
+  },"17": {
+    "doc": "Hardware setup — ESP32-C6 (on-chip ADC)",
+    "title": "Hardware setup — ESP32-C6 (on-chip ADC)",
+    "content": "# Hardware setup — ESP32-C6 (on-chip ADC) ## MCP9700 connections | MCP9700 pin | Connection | --- | --- | Vdd | 3.3 V (same rail as ESP32-C6 IO / ADC reference context) | Vss | Ground | Vout | ADC input | ## ESP32-C6 ADC mapping (default example) The stock ESP-IDF example uses: - **ADC unit:** `ADC_UNIT_1` - **Channel:** `ADC_CHANNEL_0` - **GPIO:** **GPIO0** (verify in the ESP32-C6 TRM for your silicon — GPIO0 is ADC1 CH0 on ESP32-C6 in current IDF headers) Attenuation is set to **12 dB** so the nominal **0–3.3 V** output range of the MCP9700 fits the measurable ADC range. ## Accuracy notes - Use **adc_cali** curve fitting when available (enabled in the example when `ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED` is true). - For production, measure offset and slope at known temperatures and pass custom `v_zero_c` / `v_per_c` to `Mcp9700Thermistor` if needed. ",
+    "url": "/hf-mcp9700-driver/development/docs/hardware_setup.html",
+    
+    "relUrl": "/docs/hardware_setup.html"
+  },"18": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "# Installation ## Requirements - C++17 or newer - CMake 3.16+ if you use the provided root `CMakeLists.txt` ## Header-only layout Install or vendor the repository, then add the include paths: 1. `inc/` — public headers 2. Build directory containing generated `mcp9700_version.h` (from `mcp9700_version.h.in`) The file `cmake/hf_mcp9700_build_settings.cmake` runs `configure_file` to emit `mcp9700_version.h` into `${CMAKE_CURRENT_BINARY_DIR}/hf_mcp9700_generated/` whenever it is included from a parent CMake project. ## Consume from CMake See [CMake integration](/hf-mcp9700-driver/development/docs/cmake_integration.html). ",
+    "url": "/hf-mcp9700-driver/development/docs/installation.html",
+    
+    "relUrl": "/docs/installation.html"
+  },"19": {
+    "doc": "Quick start",
+    "title": "Quick start",
+    "content": "# Quick start 1. Implement an ADC adapter with: - `bool EnsureInitialized() noexcept` - `int ReadChannelV(uint8_t channel, float* voltage_v) noexcept` Return **0** on success (matches common “error enum with 0 = OK” patterns). 2. Instantiate `hf::mcp9700::Mcp9700Thermistor` with a pointer to your adapter and a logical channel index. 3. Call `Initialize()`, then `ReadTemperatureCelsius(&t)`. Optional constructor arguments override the default **0.5 V** at 0 °C and **10 mV/°C** slope if you calibrate or use a variant with different published coefficients. ",
+    "url": "/hf-mcp9700-driver/development/docs/quickstart.html",
+    
+    "relUrl": "/docs/quickstart.html"
+  },"20": {
+    "doc": "Troubleshooting",
+    "title": "Troubleshooting",
+    "content": "# Troubleshooting ## `mcp9700_version.h` not found Run CMake so `hf_mcp9700_build_settings.cmake` can `configure_file` the version header, or add the generated include directory to your target. ## Temperature clearly wrong - Confirm **attenuation** covers MCP9700 Vout (≈ 0.1–1.75 V over −40–125 °C at 3.3 V supply; still stay within ADC range). - Enable **adc calibration** when supported. - Verify **GPIO ↔ ADC channel** mapping for your chip variant. ## `ReadChannelV` always fails Return **0** only on success. Non-zero values are treated as failure by `Mcp9700Thermistor`. ",
+    "url": "/hf-mcp9700-driver/development/docs/troubleshooting.html",
+    
+    "relUrl": "/docs/troubleshooting.html"
+  },"21": {
+    "doc": "Datasheet reference",
+    "title": "Datasheet reference",
+    "content": "# Datasheet reference See the official Microchip **MCP9700 / MCP9700A** data sheet for: - Electrical characteristics (output impedance, accuracy, supply range) - Transfer function and limits - Package pinouts This repository does not redistribute the PDF; obtain it from [Microchip](https://www.microchip.com/). ",
+    "url": "/hf-mcp9700-driver/development/docs/datasheet/",
+    
+    "relUrl": "/docs/datasheet/"
+  },"22": {
+    "doc": "ESP32 MCP9700 examples (ESP32-C6)",
+    "title": "ESP32 MCP9700 examples (ESP32-C6)",
+    "content": "# ESP32 MCP9700 examples (ESP32-C6) ESP-IDF examples for the MCP9700 linear thermistor using the on-chip **ADC** (not an external SPI/I2C ADC). ## Submodule (required for `./scripts/build_app.sh`) Initialize the shared tooling submodule once: ```bash # From repository root git submodule update --init --recursive ``` This checks out `examples/esp32/scripts` ([hf-espidf-project-tools](https://github.com/N3b3x/hf-espidf-project-tools)) so you can build and flash from `examples/esp32/` in this driver repo or from any consuming repository that vendors the same layout. ## Wiring (default configuration) | Signal | ESP32-C6 (default) | --- | --- | MCP9700 Vdd | 3.3 V (same as MCU IO rail used for ADC ref) | MCP9700 Vss | GND | MCP9700 Vout | **GPIO0** — **ADC1 channel 0** | Edit `main/mcp9700_esp32c6_example.cpp` if you use another ADC-capable GPIO (update `ADC_CHANNEL_*` and attenuation to keep Vout in range). ## Build with scripts ```bash cd examples/esp32 ./scripts/build_app.sh list ./scripts/build_app.sh mcp9700_esp32c6_example Debug ./scripts/flash_app.sh mcp9700_esp32c6_example Debug ``` ## Build with idf.py ```bash cd examples/esp32 idf.py set-target esp32c6 idf.py -B build \\ \"-DAPP_TYPE=mcp9700_esp32c6_example\" \\ \"-DBUILD_TYPE=Debug\" \\ \"-DAPP_SOURCE_FILE=mcp9700_esp32c6_example.cpp\" \\ build idf.py -B build flash monitor ``` ## Layout ``` examples/esp32/ ├── CMakeLists.txt ├── app_config.yml ├── sdkconfig.defaults ├── components/hf_mcp9700/ # wraps driver headers + generated version path ├── main/ │ ├── CMakeLists.txt │ └── mcp9700_esp32c6_example.cpp └── scripts/ # git submodule → hf-espidf-project-tools ``` ",
+    "url": "/hf-mcp9700-driver/development/examples/esp32/",
+    
+    "relUrl": "/examples/esp32/"
+  }
+}
