@@ -132,11 +132,8 @@ Numerical examples (typical model)</h1>
 <p>Values assume <b>3.3 V</b> supply context as in many embedded designs; the sensor is ratiometric to its <b>Vdd</b> — see the datasheet for supply range and load conditions.</p>
 <h1><a class="anchor" id="autotoc_md63"></a>
 Signal processing path</h1>
-<div class="fragment"><div class="line">flowchart LR</div>
-<div class="line">  A[&quot;MCP9700 Vout&quot;] --&gt; B[&quot;Your ADC\n(volts)&quot;]</div>
-<div class="line">  B --&gt; C[&quot;Mcp9700Thermistor\nReadTemperatureCelsius&quot;]</div>
-<div class="line">  C --&gt; D[&quot;T in °C&quot;]</div>
-</div><!-- fragment --><ol type="1">
+<p><img src="assets/mcp9700-signal-flow.svg" alt="MCP9700 signal-processing chain" style="pointer-events: none;" class="inline"/></p>
+<ol type="1">
 <li><b>ADC</b> must report <b>volts</b> at the MCP9700 output (after divider/attenuator if any). <br  />
 </li>
 <li><b>Driver</b> subtracts <code>v_zero_c</code> and divides by <code>v_per_c</code>. <br  />

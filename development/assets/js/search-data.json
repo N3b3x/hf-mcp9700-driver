@@ -57,7 +57,7 @@
   },"8": {
     "doc": "HardFOC MCP9700 Driver",
     "title": "📦 Overview",
-    "content": "📖 📚🌐 Live Complete Documentation — Interactive guides, hardware diagrams, transfer function, and step-by-step tutorials. The MCP9700 family outputs an analog voltage proportional to temperature. This repository provides a header-only C++17 template, hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;, that converts ADC readings in volts into degrees Celsius using the typical linear model from the Microchip datasheet: . T_C ≈ (Vout − 0.5 V) / (10 mV/°C) — override v_zero_c and v_per_c in the constructor when you calibrate or use alternate datasheet coefficients. You implement a small ADC adapter with EnsureInitialized() and ReadChannelV(uint8_t channel, float* voltage_v) returning 0 on success (aligned with HardFOC-style hf_adc_err_t conventions). flowchart LR subgraph Sensor[\"MCP9700\"] Vout[\"Vout (analog)\"] end subgraph MCU[\"Your MCU\"] ADC[\"ADC adapter\\nReadChannelV → volts\"] DRV[\"Mcp9700Thermistor\"] TC[\"Temperature °C\"] end Vout --&gt; ADC --&gt; DRV --&gt; TC . ",
+    "content": "📖 📚🌐 Live Complete Documentation — Interactive guides, hardware diagrams, transfer function, and step-by-step tutorials. The MCP9700 family outputs an analog voltage proportional to temperature. This repository provides a header-only C++17 template, hf::mcp9700::Mcp9700Thermistor&lt;AdcType&gt;, that converts ADC readings in volts into degrees Celsius using the typical linear model from the Microchip datasheet: . T_C ≈ (Vout − 0.5 V) / (10 mV/°C) — override v_zero_c and v_per_c in the constructor when you calibrate or use alternate datasheet coefficients. You implement a small ADC adapter with EnsureInitialized() and ReadChannelV(uint8_t channel, float* voltage_v) returning 0 on success (aligned with HardFOC-style hf_adc_err_t conventions). ",
     "url": "/hf-mcp9700-driver/development/#-overview",
     
     "relUrl": "/#-overview"
@@ -519,7 +519,7 @@
   },"74": {
     "doc": "📈 Transfer function",
     "title": "Signal processing path",
-    "content": "flowchart LR A[\"MCP9700 Vout\"] --&gt; B[\"Your ADC\\n(volts)\"] B --&gt; C[\"Mcp9700Thermistor\\nReadTemperatureCelsius\"] C --&gt; D[\"T in °C\"] . | ADC must report volts at the MCP9700 output (after divider/attenuator if any). | Driver subtracts v_zero_c and divides by v_per_c. | Calibration: measure at known temperatures and adjust v_zero_c / v_per_c, or correct in your adapter. | . ",
+    "content": ". | ADC must report volts at the MCP9700 output (after divider/attenuator if any). | Driver subtracts v_zero_c and divides by v_per_c. | Calibration: measure at known temperatures and adjust v_zero_c / v_per_c, or correct in your adapter. | . ",
     "url": "/hf-mcp9700-driver/development/docs/transfer_function/#signal-processing-path",
     
     "relUrl": "/docs/transfer_function/#signal-processing-path"

@@ -363,11 +363,7 @@
 </h2>
     
 
-<pre><code class="language-mermaid">flowchart LR
-  A["MCP9700 Vout"] --&gt; B["Your ADC\n(volts)"]
-  B --&gt; C["Mcp9700Thermistor\nReadTemperatureCelsius"]
-  C --&gt; D["T in °C"]
-</code></pre>
+<p><img src="/hf-mcp9700-driver/development/docs/assets/mcp9700-signal-flow.svg" alt="MCP9700 signal-processing chain" /></p>
 
 <ol>
   <li><strong>ADC</strong> must report <strong>volts</strong> at the MCP9700 output (after divider/attenuator if any).</li>

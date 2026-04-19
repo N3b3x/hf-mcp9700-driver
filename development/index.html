@@ -311,17 +311,7 @@ constructor when you calibrate or use alternate datasheet coefficients.</p>
 <code class="language-plaintext highlighter-rouge">ReadChannelV(uint8_t channel, float* voltage_v)</code> returning <strong>0</strong> on success
 (aligned with HardFOC-style <code class="language-plaintext highlighter-rouge">hf_adc_err_t</code> conventions).</p>
 
-<pre><code class="language-mermaid">flowchart LR
-  subgraph Sensor["MCP9700"]
-    Vout["Vout (analog)"]
-  end
-  subgraph MCU["Your MCU"]
-    ADC["ADC adapter\nReadChannelV → volts"]
-    DRV["Mcp9700Thermistor"]
-    TC["Temperature °C"]
-  end
-  Vout --&gt; ADC --&gt; DRV --&gt; TC
-</code></pre>
+<p><img src="/hf-mcp9700-driver/development/docs/assets/mcp9700-signal-flow.svg" alt="MCP9700 signal-processing chain" /></p>
 <h3 id="-chip-compatibility">
   
   
